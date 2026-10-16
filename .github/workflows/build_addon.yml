@@ -1,0 +1,34 @@
+name: Build NVDA Add-on Package
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify Python syntax
+        run: |
+          python3 -m py_compile addon/globalPlugins/newsHub/*.py
+
+      - name: Package .nvda-addon
+        run: |
+          cd addon
+          zip -r ../newsHub-1.0.0.nvda-addon manifest.ini globalPlugins doc -x "*/__pycache__/*" "*.pyc"
+
+      - name: Upload .nvda-addon artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsHub-1.0.0.nvda-addon
+          path: newsHub-1.0.0.nvda-addon
