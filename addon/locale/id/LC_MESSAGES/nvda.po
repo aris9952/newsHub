@@ -1,0 +1,1620 @@
+# Indonesian translations for newsHub.
+# Copyright (C) 2026 Aris Yohanes Elean, S.Kom
+# This file is distributed under the same license as the newsHub project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: newsHub 1.3.0\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2026-10-18 08:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: id\n"
+"Language-Team: id <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: addon/globalPlugins/newsHub/__init__.py:210
+#: addon/globalPlugins/newsHub/__init__.py:248
+msgid "Open the NewsHub for NVDA dashboard (Multi-site News Reader)"
+msgstr "Membuka dashboard NewsHub for NVDA (Pembaca Berita Multisitus)"
+
+#: addon/globalPlugins/newsHub/__init__.py:107
+#: addon/globalPlugins/newsHub/__init__.py:137
+#: addon/globalPlugins/newsHub/__init__.py:145
+#: addon/globalPlugins/newsHub/__init__.py:175
+msgid "&NewsHub for NVDA (News Reader)..."
+msgstr "&NewsHub for NVDA (Pembaca Berita)..."
+
+#: addon/globalPlugins/newsHub/__init__.py:108
+#: addon/globalPlugins/newsHub/__init__.py:138
+#: addon/globalPlugins/newsHub/__init__.py:146
+#: addon/globalPlugins/newsHub/__init__.py:176
+msgid "Open the NewsHub for NVDA multi-site news reader dashboard"
+msgstr "Membuka dashboard pembaca berita multisitus NewsHub for NVDA"
+
+#: addon/globalPlugins/newsHub/__init__.py:122
+#: addon/globalPlugins/newsHub/__init__.py:140
+#: addon/globalPlugins/newsHub/__init__.py:160
+#: addon/globalPlugins/newsHub/__init__.py:178
+msgid "&NewsHub for NVDA Settings..."
+msgstr "Pengaturan &NewsHub for NVDA..."
+
+#: addon/globalPlugins/newsHub/__init__.py:123
+#: addon/globalPlugins/newsHub/__init__.py:141
+#: addon/globalPlugins/newsHub/__init__.py:161
+#: addon/globalPlugins/newsHub/__init__.py:179
+msgid "Configure language and display preferences for NewsHub for NVDA"
+msgstr "Membuka pengaturan bahasa dan tampilan NewsHub for NVDA"
+
+#: addon/globalPlugins/newsHub/__init__.py:169
+#: addon/globalPlugins/newsHub/__init__.py:207
+#: addon/globalPlugins/newsHub/dialogs.py:1538
+#: addon/globalPlugins/newsHub/dialogs.py:1940
+msgid "NewsHub for NVDA settings have been saved and applied."
+msgstr "Pengaturan NewsHub for NVDA berhasil disimpan dan diterapkan."
+
+#: addon/globalPlugins/newsHub/__init__.py:189
+#: addon/globalPlugins/newsHub/__init__.py:227
+msgid "NewsHub for NVDA dashboard is active."
+msgstr "Dashboard NewsHub for NVDA aktif."
+
+#: addon/globalPlugins/newsHub/article_manager.py:212
+msgid "This rubric cannot be accessed at this time."
+msgstr "Rubrik ini tidak dapat diakses saat ini."
+
+#: addon/globalPlugins/newsHub/article_manager.py:502
+msgid ""
+"Article content could not be found on this page. The page structure may "
+"differ or it may be multimedia-only content."
+msgstr ""
+"Isi artikel tidak dapat ditemukan pada halaman ini. Struktur halaman mungkin"
+" berbeda atau merupakan konten khusus multimedia."
+
+#: addon/globalPlugins/newsHub/article_manager.py:741
+#: addon/globalPlugins/newsHub/dialogs.py:790
+#: addon/globalPlugins/newsHub/dialogs.py:1219
+msgid "Please enter a search keyword first."
+msgstr "Silakan masukkan kata kunci pencarian terlebih dahulu."
+
+#: addon/globalPlugins/newsHub/article_manager.py:745
+msgid "No supported news portals are available for search."
+msgstr "Tidak ada situs berita yang tersedia untuk pencarian."
+
+#: addon/globalPlugins/newsHub/article_manager.py:210
+msgid "{site} is not supported in this version."
+msgstr "{site} belum didukung pada versi ini."
+
+#: addon/globalPlugins/newsHub/article_manager.py:297
+msgid ""
+"No news articles were found in the {rubric_name} rubric. The page structure "
+"may have changed or the rubric is currently empty."
+msgstr ""
+"Daftar berita pada rubrik {rubric_name} tidak ditemukan. Struktur halaman "
+"mungkin berubah atau rubrik kosong."
+
+#: addon/globalPlugins/newsHub/article_manager.py:783
+msgid "No news articles found for keyword \"{query}\" across any news portal."
+msgstr ""
+"Tidak ditemukan artikel berita untuk kata kunci \"{query}\" di seluruh situs"
+" berita."
+
+#: addon/globalPlugins/newsHub/article_manager.py:547
+msgid ""
+"Failed to load article content from {site}. Please check your internet "
+"connection and try again."
+msgstr "Gagal memuat isi artikel dari {site}. Periksa koneksi internet dan coba lagi."
+
+#: addon/globalPlugins/newsHub/article_manager.py:364
+msgid ""
+"Failed to load news list for {rubric} from {site}. Please check your "
+"internet connection and try again."
+msgstr ""
+"Gagal memuat daftar berita {rubric} dari {site}. Periksa koneksi internet "
+"dan coba lagi."
+
+#: addon/globalPlugins/newsHub/article_manager.py:835
+msgid ""
+"Failed to search news for \"{query}\". Please check your internet connection"
+" and try again."
+msgstr ""
+"Gagal mencari berita untuk kata kunci \"{query}\". Periksa koneksi internet "
+"Anda dan coba lagi."
+
+#: addon/globalPlugins/newsHub/dialogs.py:141
+#: addon/globalPlugins/newsHub/dialogs.py:271
+msgid " (Default)"
+msgstr " (Default)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:135
+#: addon/globalPlugins/newsHub/dialogs.py:265
+msgid "Light (High Standard Contrast)"
+msgstr "Terang (Kontras Standar Tinggi)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:136
+#: addon/globalPlugins/newsHub/dialogs.py:266
+msgid "Dark (Low Glare)"
+msgstr "Gelap (Ramah Mata / Low Glare)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:137
+#: addon/globalPlugins/newsHub/dialogs.py:267
+msgid "High Contrast (Black - Yellow/White)"
+msgstr "Kontras Tinggi (Hitam - Kuning/Putih)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:145
+#: addon/globalPlugins/newsHub/dialogs.py:275
+msgid "Sans-serif (Segoe UI / Arial)"
+msgstr "Sans-serif (Segoe UI / Arial)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:145
+#: addon/globalPlugins/newsHub/dialogs.py:275
+msgid "Serif (Georgia / Times New Roman)"
+msgstr "Serif (Georgia / Times New Roman)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:148
+#: addon/globalPlugins/newsHub/dialogs.py:278
+msgid "Normal (1 blank line)"
+msgstr "Normal (1 baris kosong)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:148
+#: addon/globalPlugins/newsHub/dialogs.py:278
+msgid "Wide (2 blank lines)"
+msgstr "Lebar (2 baris kosong)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:152
+#: addon/globalPlugins/newsHub/dialogs.py:282
+msgid "30 seconds"
+msgstr "30 detik"
+
+#: addon/globalPlugins/newsHub/dialogs.py:153
+#: addon/globalPlugins/newsHub/dialogs.py:283
+msgid "1 minute (60 seconds - Default)"
+msgstr "1 menit (60 detik - Default)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:154
+#: addon/globalPlugins/newsHub/dialogs.py:284
+msgid "2 minutes (120 seconds)"
+msgstr "2 menit (120 detik)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:155
+#: addon/globalPlugins/newsHub/dialogs.py:285
+msgid "3 minutes (180 seconds)"
+msgstr "3 menit (180 detik)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:156
+#: addon/globalPlugins/newsHub/dialogs.py:286
+msgid "5 minutes (300 seconds)"
+msgstr "5 menit (300 detik)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:157
+#: addon/globalPlugins/newsHub/dialogs.py:287
+msgid "10 minutes (600 seconds)"
+msgstr "10 menit (600 detik)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:162
+#: addon/globalPlugins/newsHub/dialogs.py:292
+msgid "{count} articles{suffix}"
+msgstr "{count} artikel{suffix}"
+
+#: addon/globalPlugins/newsHub/dialogs.py:206
+#: addon/globalPlugins/newsHub/dialogs.py:336
+#: addon/globalPlugins/newsHub/dialogs.py:337
+#: addon/globalPlugins/newsHub/dialogs.py:467
+msgid "Display color &theme:"
+msgstr "&Tema warna tampilan:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:210
+#: addon/globalPlugins/newsHub/dialogs.py:339
+#: addon/globalPlugins/newsHub/dialogs.py:340
+#: addon/globalPlugins/newsHub/dialogs.py:469
+msgid "Display color theme"
+msgstr "Tema warna tampilan"
+
+#: addon/globalPlugins/newsHub/dialogs.py:214
+#: addon/globalPlugins/newsHub/dialogs.py:343
+#: addon/globalPlugins/newsHub/dialogs.py:344
+#: addon/globalPlugins/newsHub/dialogs.py:473
+msgid "&Font size (85% - 150%):"
+msgstr "&Ukuran huruf (85% - 150%):"
+
+#: addon/globalPlugins/newsHub/dialogs.py:218
+#: addon/globalPlugins/newsHub/dialogs.py:345
+#: addon/globalPlugins/newsHub/dialogs.py:348
+#: addon/globalPlugins/newsHub/dialogs.py:475
+msgid "Font size"
+msgstr "Ukuran huruf"
+
+#: addon/globalPlugins/newsHub/dialogs.py:222
+#: addon/globalPlugins/newsHub/dialogs.py:349
+#: addon/globalPlugins/newsHub/dialogs.py:352
+#: addon/globalPlugins/newsHub/dialogs.py:479
+msgid "Reading font &family:"
+msgstr "&Jenis huruf untuk bacaan:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:226
+#: addon/globalPlugins/newsHub/dialogs.py:351
+#: addon/globalPlugins/newsHub/dialogs.py:356
+#: addon/globalPlugins/newsHub/dialogs.py:481
+msgid "Reading font family"
+msgstr "Jenis huruf untuk bacaan"
+
+#: addon/globalPlugins/newsHub/dialogs.py:230
+#: addon/globalPlugins/newsHub/dialogs.py:355
+#: addon/globalPlugins/newsHub/dialogs.py:360
+#: addon/globalPlugins/newsHub/dialogs.py:485
+msgid "&Paragraph spacing:"
+msgstr "S&pasi antar-paragraf:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:234
+#: addon/globalPlugins/newsHub/dialogs.py:357
+#: addon/globalPlugins/newsHub/dialogs.py:364
+#: addon/globalPlugins/newsHub/dialogs.py:487
+msgid "Paragraph spacing"
+msgstr "Spasi antar-paragraf"
+
+#: addon/globalPlugins/newsHub/dialogs.py:238
+#: addon/globalPlugins/newsHub/dialogs.py:240
+#: addon/globalPlugins/newsHub/dialogs.py:362
+#: addon/globalPlugins/newsHub/dialogs.py:363
+#: addon/globalPlugins/newsHub/dialogs.py:368
+#: addon/globalPlugins/newsHub/dialogs.py:370
+#: addon/globalPlugins/newsHub/dialogs.py:492
+#: addon/globalPlugins/newsHub/dialogs.py:493
+msgid "Enable automatic news list updates"
+msgstr "Aktifkan pemeriksaan daftar berita otomatis"
+
+#: addon/globalPlugins/newsHub/dialogs.py:244
+#: addon/globalPlugins/newsHub/dialogs.py:367
+#: addon/globalPlugins/newsHub/dialogs.py:374
+#: addon/globalPlugins/newsHub/dialogs.py:497
+msgid "Auto-refresh &interval:"
+msgstr "&Interval pembaruan otomatis:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:248
+#: addon/globalPlugins/newsHub/dialogs.py:369
+#: addon/globalPlugins/newsHub/dialogs.py:378
+#: addon/globalPlugins/newsHub/dialogs.py:499
+msgid "Auto-refresh interval"
+msgstr "Interval pembaruan otomatis"
+
+#: addon/globalPlugins/newsHub/dialogs.py:252
+#: addon/globalPlugins/newsHub/dialogs.py:373
+#: addon/globalPlugins/newsHub/dialogs.py:382
+#: addon/globalPlugins/newsHub/dialogs.py:503
+msgid "&Maximum articles per rubric:"
+msgstr "Jumlah &maksimum artikel per rubrik:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:256
+#: addon/globalPlugins/newsHub/dialogs.py:375
+#: addon/globalPlugins/newsHub/dialogs.py:386
+#: addon/globalPlugins/newsHub/dialogs.py:505
+msgid "Maximum articles per rubric"
+msgstr "Jumlah maksimum artikel per rubrik"
+
+#: addon/globalPlugins/newsHub/dialogs.py:319
+#: addon/globalPlugins/newsHub/dialogs.py:449
+msgid "NewsHub for NVDA Settings"
+msgstr "Pengaturan NewsHub for NVDA"
+
+#: addon/globalPlugins/newsHub/dialogs.py:383
+#: addon/globalPlugins/newsHub/dialogs.py:513
+msgid "Save Settings"
+msgstr "Simpan Pengaturan"
+
+#: addon/globalPlugins/newsHub/dialogs.py:387
+#: addon/globalPlugins/newsHub/dialogs.py:517
+msgid "Cancel"
+msgstr "Batal"
+
+#: addon/globalPlugins/newsHub/dialogs.py:458
+#: addon/globalPlugins/newsHub/dialogs.py:462
+#: addon/globalPlugins/newsHub/dialogs.py:898
+#: addon/globalPlugins/newsHub/dialogs.py:899
+#: addon/globalPlugins/newsHub/dialogs.py:931
+#: addon/globalPlugins/newsHub/dialogs.py:935
+#: addon/globalPlugins/newsHub/dialogs.py:1325
+#: addon/globalPlugins/newsHub/dialogs.py:1326
+msgid "NewsHub for NVDA — News Reading Made Easy"
+msgstr "NewsHub for NVDA — Kemudahan dalam membaca berita"
+
+#: addon/globalPlugins/newsHub/dialogs.py:512
+#: addon/globalPlugins/newsHub/dialogs.py:903
+#: addon/globalPlugins/newsHub/dialogs.py:982
+#: addon/globalPlugins/newsHub/dialogs.py:1330
+msgid "NewsHub for NVDA Reading Area"
+msgstr "Ruang Baca NewsHub for NVDA"
+
+#: addon/globalPlugins/newsHub/dialogs.py:526
+#: addon/globalPlugins/newsHub/dialogs.py:906
+#: addon/globalPlugins/newsHub/dialogs.py:996
+#: addon/globalPlugins/newsHub/dialogs.py:1189
+#: addon/globalPlugins/newsHub/dialogs.py:1333
+#: addon/globalPlugins/newsHub/dialogs.py:1589
+#: addon/globalPlugins/newsHub/dialogs.py:1982
+msgid "Search news keyword across all portals"
+msgstr "Kata kunci pencarian berita di semua situs"
+
+#: addon/globalPlugins/newsHub/dialogs.py:529
+#: addon/globalPlugins/newsHub/dialogs.py:908
+#: addon/globalPlugins/newsHub/dialogs.py:999
+#: addon/globalPlugins/newsHub/dialogs.py:1335
+msgid "Search news across all portals"
+msgstr "Cari berita di semua situs"
+
+#: addon/globalPlugins/newsHub/dialogs.py:532
+#: addon/globalPlugins/newsHub/dialogs.py:910
+#: addon/globalPlugins/newsHub/dialogs.py:1002
+#: addon/globalPlugins/newsHub/dialogs.py:1337
+msgid "Clear search results and return to default view"
+msgstr "Bersihkan hasil pencarian dan kembali ke tampilan awal"
+
+#: addon/globalPlugins/newsHub/dialogs.py:551
+#: addon/globalPlugins/newsHub/dialogs.py:913
+#: addon/globalPlugins/newsHub/dialogs.py:1021
+#: addon/globalPlugins/newsHub/dialogs.py:1340
+msgid "News portal selection"
+msgstr "Pilihan situs berita"
+
+#: addon/globalPlugins/newsHub/dialogs.py:555
+#: addon/globalPlugins/newsHub/dialogs.py:922
+#: addon/globalPlugins/newsHub/dialogs.py:1025
+#: addon/globalPlugins/newsHub/dialogs.py:1349
+msgid "News rubric selection"
+msgstr "Pilihan rubrik berita"
+
+#: addon/globalPlugins/newsHub/dialogs.py:567
+#: addon/globalPlugins/newsHub/dialogs.py:936
+#: addon/globalPlugins/newsHub/dialogs.py:1037
+#: addon/globalPlugins/newsHub/dialogs.py:1363
+msgid "Article headline selection"
+msgstr "Pilihan judul artikel"
+
+#: addon/globalPlugins/newsHub/dialogs.py:581
+#: addon/globalPlugins/newsHub/dialogs.py:939
+#: addon/globalPlugins/newsHub/dialogs.py:1051
+#: addon/globalPlugins/newsHub/dialogs.py:1366
+msgid "Loading status information"
+msgstr "Memuat status"
+
+#: addon/globalPlugins/newsHub/dialogs.py:596
+#: addon/globalPlugins/newsHub/dialogs.py:820
+#: addon/globalPlugins/newsHub/dialogs.py:942
+#: addon/globalPlugins/newsHub/dialogs.py:1064
+#: addon/globalPlugins/newsHub/dialogs.py:1369
+msgid "Article reading area"
+msgstr "Isi berita"
+
+#: addon/globalPlugins/newsHub/dialogs.py:593
+#: addon/globalPlugins/newsHub/dialogs.py:1065
+msgid "Select an article headline from the list to read its full content."
+msgstr "Pilih judul artikel pada daftar untuk membaca isi berita."
+
+#: addon/globalPlugins/newsHub/dialogs.py:608
+#: addon/globalPlugins/newsHub/dialogs.py:948
+#: addon/globalPlugins/newsHub/dialogs.py:1074
+#: addon/globalPlugins/newsHub/dialogs.py:1372
+msgid "Previous Article (Alt+[)"
+msgstr "Artikel Sebelumnya (Alt+[)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:611
+#: addon/globalPlugins/newsHub/dialogs.py:951
+#: addon/globalPlugins/newsHub/dialogs.py:1077
+#: addon/globalPlugins/newsHub/dialogs.py:1375
+msgid "Next Article (Alt+])"
+msgstr "Artikel Berikutnya (Alt+])"
+
+#: addon/globalPlugins/newsHub/dialogs.py:614
+#: addon/globalPlugins/newsHub/dialogs.py:954
+#: addon/globalPlugins/newsHub/dialogs.py:1080
+#: addon/globalPlugins/newsHub/dialogs.py:1378
+msgid "Refresh Article List (F5)"
+msgstr "Perbarui Daftar Artikel Berita (F5)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:617
+#: addon/globalPlugins/newsHub/dialogs.py:957
+#: addon/globalPlugins/newsHub/dialogs.py:1083
+#: addon/globalPlugins/newsHub/dialogs.py:1381
+msgid "Reload Article (Ctrl+R)"
+msgstr "Muat Ulang Artikel (Ctrl+R)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:620
+#: addon/globalPlugins/newsHub/dialogs.py:960
+#: addon/globalPlugins/newsHub/dialogs.py:1086
+#: addon/globalPlugins/newsHub/dialogs.py:1384
+#: addon/globalPlugins/newsHub/formatter.py:261
+msgid "Open Original Article in Browser"
+msgstr "Buka Artikel Asli di Peramban"
+
+#: addon/globalPlugins/newsHub/dialogs.py:623
+#: addon/globalPlugins/newsHub/dialogs.py:963
+#: addon/globalPlugins/newsHub/dialogs.py:1089
+#: addon/globalPlugins/newsHub/dialogs.py:1387
+msgid "Back to rubric selection"
+msgstr "Kembali ke pilihan rubrik"
+
+#: addon/globalPlugins/newsHub/dialogs.py:626
+#: addon/globalPlugins/newsHub/dialogs.py:966
+#: addon/globalPlugins/newsHub/dialogs.py:1092
+#: addon/globalPlugins/newsHub/dialogs.py:1390
+msgid "Back to portal selection"
+msgstr "Kembali ke pilihan situs"
+
+#: addon/globalPlugins/newsHub/dialogs.py:629
+#: addon/globalPlugins/newsHub/dialogs.py:969
+#: addon/globalPlugins/newsHub/dialogs.py:1095
+#: addon/globalPlugins/newsHub/dialogs.py:1393
+msgid "Accessibility Settings"
+msgstr "Pengaturan Aksesibilitas"
+
+#: addon/globalPlugins/newsHub/dialogs.py:632
+#: addon/globalPlugins/newsHub/dialogs.py:972
+#: addon/globalPlugins/newsHub/dialogs.py:1098
+#: addon/globalPlugins/newsHub/dialogs.py:1396
+msgid "Close Dashboard"
+msgstr "Tutup Ruang Baca"
+
+#: addon/globalPlugins/newsHub/dialogs.py:862
+#: addon/globalPlugins/newsHub/dialogs.py:1290
+msgid "No search results found"
+msgstr "Hasil pencarian tidak ditemukan"
+
+#: addon/globalPlugins/newsHub/dialogs.py:882
+#: addon/globalPlugins/newsHub/dialogs.py:1309
+msgid "Search results cleared. Returned to default view."
+msgstr "Hasil pencarian dibersihkan. Kembali ke tampilan awal."
+
+#: addon/globalPlugins/newsHub/dialogs.py:506
+#: addon/globalPlugins/newsHub/dialogs.py:901
+#: addon/globalPlugins/newsHub/dialogs.py:976
+#: addon/globalPlugins/newsHub/dialogs.py:1328
+msgid "&Dashboard Title:"
+msgstr "Ruang &Baca:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:509
+#: addon/globalPlugins/newsHub/dialogs.py:902
+#: addon/globalPlugins/newsHub/dialogs.py:979
+#: addon/globalPlugins/newsHub/dialogs.py:1329
+msgid "NewsHub for NVDA — News Reading Made Easy "
+msgstr "NewsHub for NVDA — Kemudahan Membaca Berita "
+
+#: addon/globalPlugins/newsHub/dialogs.py:520
+#: addon/globalPlugins/newsHub/dialogs.py:905
+#: addon/globalPlugins/newsHub/dialogs.py:990
+#: addon/globalPlugins/newsHub/dialogs.py:1332
+msgid "Search &news:"
+msgstr "&Cari berita:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:528
+#: addon/globalPlugins/newsHub/dialogs.py:907
+#: addon/globalPlugins/newsHub/dialogs.py:998
+#: addon/globalPlugins/newsHub/dialogs.py:1334
+msgid "&Search News"
+msgstr "&Cari Berita"
+
+#: addon/globalPlugins/newsHub/dialogs.py:531
+#: addon/globalPlugins/newsHub/dialogs.py:909
+#: addon/globalPlugins/newsHub/dialogs.py:1001
+#: addon/globalPlugins/newsHub/dialogs.py:1336
+msgid "Clear &Search (Esc)"
+msgstr "Bersihkan &Pencarian (Esc)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:546
+#: addon/globalPlugins/newsHub/dialogs.py:912
+#: addon/globalPlugins/newsHub/dialogs.py:1016
+#: addon/globalPlugins/newsHub/dialogs.py:1339
+msgid "News &portal:"
+msgstr "&Situs berita:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:553
+#: addon/globalPlugins/newsHub/dialogs.py:921
+#: addon/globalPlugins/newsHub/dialogs.py:1023
+#: addon/globalPlugins/newsHub/dialogs.py:1348
+msgid "News &rubric:"
+msgstr "&Rubrik berita:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:565
+#: addon/globalPlugins/newsHub/dialogs.py:935
+#: addon/globalPlugins/newsHub/dialogs.py:1035
+#: addon/globalPlugins/newsHub/dialogs.py:1362
+msgid "&Article list:"
+msgstr "Daftar &artikel:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:575
+#: addon/globalPlugins/newsHub/dialogs.py:938
+#: addon/globalPlugins/newsHub/dialogs.py:1045
+#: addon/globalPlugins/newsHub/dialogs.py:1365
+msgid "Loading &status:"
+msgstr "Memuat &status:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:588
+#: addon/globalPlugins/newsHub/dialogs.py:941
+#: addon/globalPlugins/newsHub/dialogs.py:1057
+#: addon/globalPlugins/newsHub/dialogs.py:1368
+msgid "Full article &content:"
+msgstr "&Isi lengkap berita:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:607
+#: addon/globalPlugins/newsHub/dialogs.py:947
+#: addon/globalPlugins/newsHub/dialogs.py:1073
+#: addon/globalPlugins/newsHub/dialogs.py:1371
+msgid "Pre&vious Article (Alt+[)"
+msgstr "Artikel Se&belumnya (Alt+[)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:610
+#: addon/globalPlugins/newsHub/dialogs.py:950
+#: addon/globalPlugins/newsHub/dialogs.py:1076
+#: addon/globalPlugins/newsHub/dialogs.py:1374
+msgid "Ne&xt Article (Alt+])"
+msgstr "Artikel Beri&kutnya (Alt+])"
+
+#: addon/globalPlugins/newsHub/dialogs.py:613
+#: addon/globalPlugins/newsHub/dialogs.py:953
+#: addon/globalPlugins/newsHub/dialogs.py:1079
+#: addon/globalPlugins/newsHub/dialogs.py:1377
+msgid "Re&fresh Article List (F5)"
+msgstr "Per&barui Daftar Artikel Berita (F5)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:616
+#: addon/globalPlugins/newsHub/dialogs.py:956
+#: addon/globalPlugins/newsHub/dialogs.py:1082
+#: addon/globalPlugins/newsHub/dialogs.py:1380
+msgid "&Reload Article (Ctrl+R)"
+msgstr "&Muat Ulang Artikel (Ctrl+R)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:619
+#: addon/globalPlugins/newsHub/dialogs.py:959
+#: addon/globalPlugins/newsHub/dialogs.py:1085
+#: addon/globalPlugins/newsHub/dialogs.py:1383
+msgid "&Open Original Article in Browser"
+msgstr "Buka Artikel &Asli di Peramban"
+
+#: addon/globalPlugins/newsHub/dialogs.py:622
+#: addon/globalPlugins/newsHub/dialogs.py:962
+#: addon/globalPlugins/newsHub/dialogs.py:1088
+#: addon/globalPlugins/newsHub/dialogs.py:1386
+msgid "Back to &Rubric Selection"
+msgstr "Kembali ke Pilihan &Rubrik"
+
+#: addon/globalPlugins/newsHub/dialogs.py:625
+#: addon/globalPlugins/newsHub/dialogs.py:965
+#: addon/globalPlugins/newsHub/dialogs.py:1091
+#: addon/globalPlugins/newsHub/dialogs.py:1389
+msgid "Back to &Portal Selection"
+msgstr "Kembali ke Pilihan Si&tus"
+
+#: addon/globalPlugins/newsHub/dialogs.py:628
+#: addon/globalPlugins/newsHub/dialogs.py:968
+#: addon/globalPlugins/newsHub/dialogs.py:1094
+#: addon/globalPlugins/newsHub/dialogs.py:1392
+msgid "Accessibility &Settings..."
+msgstr "Peng&aturan Aksesibilitas..."
+
+#: addon/globalPlugins/newsHub/dialogs.py:631
+#: addon/globalPlugins/newsHub/dialogs.py:971
+#: addon/globalPlugins/newsHub/dialogs.py:1097
+#: addon/globalPlugins/newsHub/dialogs.py:1395
+msgid "&Close Dashboard (Esc)"
+msgstr "&Tutup Ruang Baca (Esc)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:1518
+#: addon/globalPlugins/newsHub/dialogs.py:1653
+#: addon/globalPlugins/newsHub/dialogs.py:1920
+#: addon/globalPlugins/newsHub/dialogs.py:2029
+msgid "Returned to news portal selection."
+msgstr "Kembali ke pilihan situs berita."
+
+#: addon/globalPlugins/newsHub/dialogs.py:316
+#: addon/globalPlugins/newsHub/dialogs.py:446
+msgid "Settings — NewsHub for NVDA"
+msgstr "Pengaturan — NewsHub for NVDA"
+
+#: addon/globalPlugins/newsHub/dialogs.py:361
+#: addon/globalPlugins/newsHub/dialogs.py:491
+msgid "Background &auto-refresh:"
+msgstr "Pembaruan &otomatis di latar belakang:"
+
+#: addon/globalPlugins/newsHub/dialogs.py:382
+#: addon/globalPlugins/newsHub/dialogs.py:512
+msgid "&Save Settings"
+msgstr "&Simpan Pengaturan"
+
+#: addon/globalPlugins/newsHub/dialogs.py:386
+#: addon/globalPlugins/newsHub/dialogs.py:516
+msgid "&Cancel"
+msgstr "&Batal"
+
+#: addon/globalPlugins/newsHub/dialogs.py:578
+#: addon/globalPlugins/newsHub/dialogs.py:1048
+msgid "Ready. Select a news portal and rubric to load the article list."
+msgstr "Siap. Pilih situs dan rubrik berita untuk memuat daftar artikel."
+
+#: addon/globalPlugins/newsHub/dialogs.py:803
+#: addon/globalPlugins/newsHub/dialogs.py:1231
+msgid "Searching news for \"{query}\" across all news portals..."
+msgstr "Mencari berita untuk \"{query}\" di seluruh situs berita..."
+
+#: addon/globalPlugins/newsHub/dialogs.py:932
+#: addon/globalPlugins/newsHub/dialogs.py:1129
+#: addon/globalPlugins/newsHub/dialogs.py:1359
+#: addon/globalPlugins/newsHub/dialogs.py:1547
+msgid "No rubrics available (Portal not supported yet)"
+msgstr "Tidak ada rubrik (Situs belum didukung)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:1133
+#: addon/globalPlugins/newsHub/dialogs.py:1551
+msgid "No articles available"
+msgstr "Tidak ada artikel"
+
+#: addon/globalPlugins/newsHub/dialogs.py:1309
+#: addon/globalPlugins/newsHub/dialogs.py:1726
+msgid "News list could not be loaded"
+msgstr "Daftar artikel berita belum dapat dimuat"
+
+#: addon/globalPlugins/newsHub/dialogs.py:723
+#: addon/globalPlugins/newsHub/dialogs.py:1476
+#: addon/globalPlugins/newsHub/dialogs.py:1878
+msgid "No article list is available yet."
+msgstr "Belum ada daftar artikel yang tersedia."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1485
+#: addon/globalPlugins/newsHub/dialogs.py:1887
+msgid "You are already at the first article."
+msgstr "Anda berada di artikel pertama."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1488
+#: addon/globalPlugins/newsHub/dialogs.py:1890
+msgid "You are already at the last article."
+msgstr "Anda sudah berada di artikel terakhir."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1495
+#: addon/globalPlugins/newsHub/dialogs.py:1897
+msgid "Please select an article first to reload."
+msgstr "Pilih sebuah artikel terlebih dahulu untuk dimuat ulang."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1508
+#: addon/globalPlugins/newsHub/dialogs.py:1649
+#: addon/globalPlugins/newsHub/dialogs.py:1910
+#: addon/globalPlugins/newsHub/dialogs.py:2025
+msgid "Returned to news rubric selection."
+msgstr "Kembali ke pilihan rubrik berita."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1511
+#: addon/globalPlugins/newsHub/dialogs.py:1913
+msgid "Rubrics are not available for this portal. Focused on news portal selection."
+msgstr "Rubrik tidak tersedia untuk situs ini. Fokus pada pemilihan situs berita."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1522
+#: addon/globalPlugins/newsHub/dialogs.py:1924
+msgid "No article URL is available to open."
+msgstr "Tidak ada tautan artikel yang dapat dibuka."
+
+#: addon/globalPlugins/newsHub/dialogs.py:566
+#: addon/globalPlugins/newsHub/dialogs.py:1036
+msgid "No articles loaded yet"
+msgstr "Belum ada artikel yang dimuat"
+
+#: addon/globalPlugins/newsHub/dialogs.py:1178
+#: addon/globalPlugins/newsHub/dialogs.py:1645
+#: addon/globalPlugins/newsHub/dialogs.py:2021
+msgid "Returned to article selection."
+msgstr "Kembali ke pilihan artikel."
+
+#: addon/globalPlugins/newsHub/dialogs.py:799
+#: addon/globalPlugins/newsHub/dialogs.py:1227
+msgid "Searching news for \"{query}\"..."
+msgstr "Mencari berita untuk \"{query}\"..."
+
+#: addon/globalPlugins/newsHub/dialogs.py:848
+#: addon/globalPlugins/newsHub/dialogs.py:1276
+msgid ""
+"Search completed. Found {count} articles for \"{query}\" across all portals."
+" Press Escape to clear search."
+msgstr ""
+"Pencarian selesai. Ditemukan {count} artikel untuk \"{query}\" dari seluruh "
+"situs. Tekan Escape untuk membersihkan pencarian."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1136
+#: addon/globalPlugins/newsHub/dialogs.py:1554
+msgid "{site_name} is not supported in this version yet."
+msgstr "{site_name} belum didukung pada versi ini."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1188
+#: addon/globalPlugins/newsHub/dialogs.py:1605
+msgid "Loading {rubric_name} article list..."
+msgstr "Memuat daftar artikel berita {rubric_name}..."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1191
+#: addon/globalPlugins/newsHub/dialogs.py:1608
+msgid "Fetching {rubric_name} news list from {site_name}..."
+msgstr "Mengambil daftar artikel berita {rubric_name} dari {site_name}..."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1276
+#: addon/globalPlugins/newsHub/dialogs.py:1693
+msgid "News list loaded successfully. Found {count} articles in {rubric_name}."
+msgstr ""
+"Daftar artikel berita berhasil dimuat. Ditemukan {count} artikel pada rubrik"
+" {rubric_name}."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1303
+#: addon/globalPlugins/newsHub/dialogs.py:1720
+msgid "{error_msg} Showing {count} previously loaded articles."
+msgstr "{error_msg} Menampilkan {count} artikel yang telah dimuat sebelumnya."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1530
+#: addon/globalPlugins/newsHub/dialogs.py:1932
+msgid "Failed to open the web browser for this article."
+msgstr "Gagal membuka peramban web untuk artikel ini."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1138
+#: addon/globalPlugins/newsHub/dialogs.py:1556
+msgid ""
+"{msg}\r\n"
+"\r\n"
+"Please select Kompas.com, Detik.com, CNN Indonesia, CNBC Indonesia, or "
+"Tempo.co in the News portal list to read news."
+msgstr ""
+"{msg}\r\n"
+"\r\n"
+"Silakan pilih Kompas.com, Detik.com, CNN Indonesia, CNBC Indonesia, atau "
+"Tempo.co pada daftar Situs berita untuk membaca berita."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1206
+#: addon/globalPlugins/newsHub/dialogs.py:1623
+msgid "Fetching {rubric_name} news list."
+msgstr "Mengambil daftar artikel berita {rubric_name}."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1268
+#: addon/globalPlugins/newsHub/dialogs.py:1685
+msgid "{rubric_name} news list automatically updated ({count} articles)."
+msgstr "Daftar artikel berita {rubric_name} diperbarui otomatis ({count} artikel)."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1312
+#: addon/globalPlugins/newsHub/dialogs.py:1729
+msgid ""
+"{error_msg}\r\n"
+"\r\n"
+"Press F5 or activate the Refresh Article List button to try again."
+msgstr ""
+"{error_msg}\r\n"
+"\r\n"
+"Tekan F5 atau aktifkan tombol Perbarui Daftar Berita untuk mencoba kembali."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1363
+#: addon/globalPlugins/newsHub/dialogs.py:1779
+msgid "Article selected: {title}. Loading full content."
+msgstr "Artikel terpilih: {title}. Sedang memuat isi lengkap."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1368
+#: addon/globalPlugins/newsHub/dialogs.py:1784
+msgid "News list loaded ({count} articles). Loading the first article..."
+msgstr ""
+"Daftar artikel berita berhasil dimuat ({count} artikel). Memuat isi artikel "
+"pertama..."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1413
+#: addon/globalPlugins/newsHub/dialogs.py:1829
+msgid "Article content was only partially loaded. {summary}"
+msgstr "Isi artikel hanya berhasil dimuat sebagian. {summary}"
+
+#: addon/globalPlugins/newsHub/dialogs.py:1418
+#: addon/globalPlugins/newsHub/dialogs.py:1834
+msgid "Article content loaded successfully. {summary}"
+msgstr "Isi artikel berhasil dimuat. {summary}"
+
+#: addon/globalPlugins/newsHub/dialogs.py:1437
+#: addon/globalPlugins/newsHub/dialogs.py:1848
+msgid "Article content was only partially loaded ({error_msg})."
+msgstr "Isi artikel hanya berhasil dimuat sebagian ({error_msg})."
+
+#: addon/globalPlugins/newsHub/dialogs.py:1526
+#: addon/globalPlugins/newsHub/dialogs.py:1928
+msgid "Opening original article in browser: {title}"
+msgstr "Membuka artikel asli di peramban: {title}"
+
+#: addon/globalPlugins/newsHub/formatter.py:62
+#: addon/globalPlugins/newsHub/formatter.py:68
+msgid "[News Data Table]"
+msgstr "[Tabel Informasi Berita]"
+
+#: addon/globalPlugins/newsHub/formatter.py:173
+#: addon/globalPlugins/newsHub/formatter.py:177
+msgid "Article Video"
+msgstr "Video Artikel"
+
+#: addon/globalPlugins/newsHub/formatter.py:220
+#: addon/globalPlugins/newsHub/formatter.py:356
+#: addon/globalPlugins/newsHub/formatter.py:485
+msgid "Article Title Unavailable"
+msgstr "Judul Artikel Tidak Tersedia"
+
+#: addon/globalPlugins/newsHub/formatter.py:133
+#: addon/globalPlugins/newsHub/formatter.py:138
+msgid "Article Photo"
+msgstr "Foto Artikel"
+
+#: addon/globalPlugins/newsHub/formatter.py:269
+#: addon/globalPlugins/newsHub/formatter.py:406
+#: addon/globalPlugins/newsHub/formatter.py:514
+msgid "Status: Loading full article content from the source. Please wait..."
+msgstr ""
+"Status: Sedang memuat isi lengkap artikel dari sumber. Mohon tunggu "
+"sebentar..."
+
+#: addon/globalPlugins/newsHub/formatter.py:277
+#: addon/globalPlugins/newsHub/formatter.py:417
+#: addon/globalPlugins/newsHub/formatter.py:520
+msgid "Article content could not be extracted from the source page."
+msgstr "Konten artikel tidak dapat diekstrak dari halaman sumber."
+
+#: addon/globalPlugins/newsHub/formatter.py:291
+#: addon/globalPlugins/newsHub/formatter.py:432
+#: addon/globalPlugins/newsHub/formatter.py:532
+msgid ""
+"Notice: Article content was only partially loaded. To read the full web "
+"page, use the Reload Article button (Ctrl+R) or Open Original Article in "
+"Browser."
+msgstr ""
+"Pemberitahuan: Isi artikel hanya berhasil dimuat sebagian. Untuk membaca "
+"halaman selengkapnya, gunakan tombol Muat Ulang Artikel (Ctrl+R) atau Buka "
+"Artikel Asli di Peramban."
+
+#: addon/globalPlugins/newsHub/formatter.py:176
+#: addon/globalPlugins/newsHub/formatter.py:180
+#: addon/globalPlugins/newsHub/formatter.py:578
+#: addon/globalPlugins/newsHub/formatter.py:620
+msgid "Video {num} ({provider}):"
+msgstr "Video {num} ({provider}):"
+
+#: addon/globalPlugins/newsHub/formatter.py:686
+#: addon/globalPlugins/newsHub/formatter.py:740
+msgid "Article {index} of {total}: {title}."
+msgstr "Artikel {index} dari {total}: {title}."
+
+#: addon/globalPlugins/newsHub/formatter.py:135
+#: addon/globalPlugins/newsHub/formatter.py:140
+#: addon/globalPlugins/newsHub/formatter.py:589
+#: addon/globalPlugins/newsHub/formatter.py:610
+msgid "Photo {num}:"
+msgstr "Foto {num}:"
+
+#: addon/globalPlugins/newsHub/formatter.py:279
+#: addon/globalPlugins/newsHub/formatter.py:419
+#: addon/globalPlugins/newsHub/formatter.py:522
+msgid ""
+"Notice: Full article content could not be loaded ({reason}). You can press "
+"the Reload Article button (Ctrl+R) or Open Original Article in Browser."
+msgstr ""
+"Pemberitahuan: Isi lengkap artikel gagal dimuat ({reason}). Anda dapat "
+"menekan tombol Muat Ulang Artikel (Ctrl+R) atau Buka Artikel Asli di "
+"Peramban."
+
+#: addon/globalPlugins/newsHub/formatter.py:305
+#: addon/globalPlugins/newsHub/formatter.py:512
+#: addon/globalPlugins/newsHub/formatter.py:545
+msgid "Summary: {summary}"
+msgstr "Ringkasan: {summary}"
+
+#: addon/globalPlugins/newsHub/formatter.py:458
+#: addon/globalPlugins/newsHub/formatter.py:613
+#: addon/globalPlugins/newsHub/formatter.py:655
+msgid "Source Link: {url}"
+msgstr "Tautan Sumber: {url}"
+
+#: addon/globalPlugins/newsHub/formatter.py:692
+#: addon/globalPlugins/newsHub/formatter.py:746
+msgid "Rubric {rubric}."
+msgstr "Rubrik {rubric}."
+
+#: addon/globalPlugins/newsHub/formatter.py:694
+#: addon/globalPlugins/newsHub/formatter.py:748
+msgid "Published {published_at}."
+msgstr "Diterbitkan {published_at}."
+
+#: addon/globalPlugins/newsHub/formatter.py:697
+#: addon/globalPlugins/newsHub/formatter.py:751
+msgid "Estimated reading time about {minutes} minutes."
+msgstr "Perkiraan waktu baca sekitar {minutes} menit."
+
+#: addon/globalPlugins/newsHub/formatter.py:703
+#: addon/globalPlugins/newsHub/formatter.py:757
+msgid "Contains {photos} photos and {videos} videos."
+msgstr "Memuat {photos} foto dan {videos} video."
+
+#: addon/globalPlugins/newsHub/formatter.py:138
+#: addon/globalPlugins/newsHub/formatter.py:143
+#: addon/globalPlugins/newsHub/formatter.py:430
+#: addon/globalPlugins/newsHub/formatter.py:576
+#: addon/globalPlugins/newsHub/formatter.py:629
+msgid "Image Caption: {text}"
+msgstr "Keterangan Gambar: {text}"
+
+#: addon/globalPlugins/newsHub/formatter.py:374
+#: addon/globalPlugins/newsHub/formatter.py:492
+msgid "Rubric: {value}"
+msgstr "Rubrik: {value}"
+
+#: addon/globalPlugins/newsHub/formatter.py:376
+#: addon/globalPlugins/newsHub/formatter.py:494
+msgid "Published: {value}"
+msgstr "Waktu Publikasi: {value}"
+
+#: addon/globalPlugins/newsHub/formatter.py:249
+#: addon/globalPlugins/newsHub/formatter.py:378
+#: addon/globalPlugins/newsHub/formatter.py:496
+msgid "Author: {value}"
+msgstr "Penulis: {value}"
+
+#: addon/globalPlugins/newsHub/formatter.py:253
+#: addon/globalPlugins/newsHub/formatter.py:380
+#: addon/globalPlugins/newsHub/formatter.py:498
+msgid "Editor: {value}"
+msgstr "Editor: {value}"
+
+#: addon/globalPlugins/newsHub/formatter.py:230
+#: addon/globalPlugins/newsHub/formatter.py:384
+#: addon/globalPlugins/newsHub/formatter.py:501
+msgid "Estimated Reading Time: about {minutes} min (approximated from text length)"
+msgstr ""
+"Estimasi Waktu Baca: sekitar {minutes} menit (perkiraan berdasarkan panjang "
+"teks)"
+
+#: addon/globalPlugins/newsHub/formatter.py:256
+#: addon/globalPlugins/newsHub/formatter.py:391
+#: addon/globalPlugins/newsHub/formatter.py:506
+msgid "Photos in article: {count}"
+msgstr "Foto dalam artikel: {count}"
+
+#: addon/globalPlugins/newsHub/formatter.py:258
+#: addon/globalPlugins/newsHub/formatter.py:395
+#: addon/globalPlugins/newsHub/formatter.py:508
+msgid "Videos in article: {count}"
+msgstr "Video dalam artikel: {count}"
+
+#: addon/globalPlugins/newsHub/formatter.py:272
+#: addon/globalPlugins/newsHub/formatter.py:411
+#: addon/globalPlugins/newsHub/formatter.py:516
+msgid "Initial Summary: {summary}"
+msgstr "Ringkasan Awal: {summary}"
+
+#: addon/globalPlugins/newsHub/formatter.py:285
+#: addon/globalPlugins/newsHub/formatter.py:425
+#: addon/globalPlugins/newsHub/formatter.py:527
+msgid ""
+"Available summary:\r\n"
+"{summary}"
+msgstr ""
+"Ringkasan yang tersedia:\r\n"
+"{summary}"
+
+#: addon/globalPlugins/newsHub/formatter.py:708
+#: addon/globalPlugins/newsHub/formatter.py:762
+msgid "Contains {photos} photos."
+msgstr "Memuat {photos} foto."
+
+#: addon/globalPlugins/newsHub/formatter.py:525
+#: addon/globalPlugins/newsHub/formatter.py:599
+msgid "Subheading: {text}"
+msgstr "Subjudul: {text}"
+
+#: addon/globalPlugins/newsHub/formatter.py:710
+#: addon/globalPlugins/newsHub/formatter.py:764
+msgid "Contains {videos} videos."
+msgstr "Memuat {videos} video."
+
+#: addon/globalPlugins/newsHub/formatter.py:530
+#: addon/globalPlugins/newsHub/formatter.py:602
+msgid "Quote: \"{text}\""
+msgstr "Kutipan: \"{text}\""
+
+#: addon/globalPlugins/newsHub/formatter.py:435
+#: addon/globalPlugins/newsHub/formatter.py:581
+#: addon/globalPlugins/newsHub/formatter.py:632
+msgid "Source/Credit: {text}"
+msgstr "Sumber/Kredit: {text}"
+
+#: addon/globalPlugins/newsHub/models.py:36
+msgid "Article not fetched yet"
+msgstr "Artikel belum diambil"
+
+#: addon/globalPlugins/newsHub/models.py:37
+msgid "Headline loaded"
+msgstr "Judul berhasil dimuat"
+
+#: addon/globalPlugins/newsHub/models.py:38
+msgid "Loading content"
+msgstr "Konten sedang dimuat"
+
+#: addon/globalPlugins/newsHub/models.py:39
+msgid "Content loaded"
+msgstr "Konten berhasil dimuat"
+
+#: addon/globalPlugins/newsHub/models.py:40
+msgid "Content partially available"
+msgstr "Konten hanya tersedia sebagian"
+
+#: addon/globalPlugins/newsHub/models.py:41
+msgid "Content retrieval failed"
+msgstr "Pengambilan konten gagal"
+
+#: addon/globalPlugins/newsHub/models.py:43
+msgid "Unknown status"
+msgstr "Status tidak diketahui"
+
+#: addon/globalPlugins/newsHub/network.py:154
+msgid "The news URL is empty or invalid."
+msgstr "Alamat URL berita kosong atau tidak valid."
+
+#: addon/globalPlugins/newsHub/network.py:160
+msgid "Unsupported URL scheme. Only HTTP and HTTPS are allowed."
+msgstr "Skema alamat URL tidak didukung. Hanya HTTP dan HTTPS yang diizinkan."
+
+#: addon/globalPlugins/newsHub/network.py:166
+msgid "Domain name was not found in the news URL."
+msgstr "Nama domain pada URL berita tidak ditemukan."
+
+#: addon/globalPlugins/newsHub/network.py:175
+msgid "Domain '{host}' is outside the allowed news source domains."
+msgstr "Domain '{host}' berada di luar domain sumber berita yang diizinkan."
+
+#: addon/globalPlugins/newsHub/network.py:463
+#: addon/globalPlugins/newsHub/network.py:623
+msgid "Page from {site} returned an empty or incomplete response."
+msgstr "Halaman dari {site} mengembalikan respons kosong atau tidak lengkap."
+
+#: addon/globalPlugins/newsHub/network.py:573
+#: addon/globalPlugins/newsHub/network.py:658
+msgid ""
+"An error occurred while contacting {site}. Please check your internet "
+"connection and try again."
+msgstr ""
+"Terjadi kesalahan saat menghubungi {site}. Periksa koneksi internet dan coba"
+" lagi."
+
+#: addon/globalPlugins/newsHub/network.py:423
+msgid "Response from {site} is not a supported text/HTML news page."
+msgstr "Respons dari {site} bukan halaman berita teks/HTML yang didukung."
+
+#: addon/globalPlugins/newsHub/network.py:449
+#: addon/globalPlugins/newsHub/network.py:617
+msgid "Response size from {site} exceeded the safe limit (5 MB)."
+msgstr "Ukuran respons halaman dari {site} melebihi batas aman (5 MB)."
+
+#: addon/globalPlugins/newsHub/network.py:540
+msgid ""
+"Access to {site_label} was denied by the server (HTTP 403). This rubric or "
+"article may be restricted."
+msgstr ""
+"Akses ke halaman {site_label} ditolak oleh server (HTTP 403). Rubrik atau "
+"artikel ini mungkin dibatasi."
+
+#: addon/globalPlugins/newsHub/network.py:555
+msgid ""
+"Connection to {site} timed out. Please check your internet connection and "
+"try again."
+msgstr "Waktu koneksi ke {site} habis. Periksa koneksi internet dan coba lagi."
+
+#: addon/globalPlugins/newsHub/network.py:567
+msgid ""
+"Reading data from {site} timed out. Please check your internet connection "
+"and try again."
+msgstr ""
+"Waktu pembacaan data dari {site} habis. Periksa koneksi internet dan coba "
+"lagi."
+
+#: addon/globalPlugins/newsHub/network.py:542
+msgid "The requested page or rubric on {site_label} was not found (HTTP 404)."
+msgstr "Halaman atau rubrik di {site_label} tidak ditemukan (HTTP 404)."
+
+#: addon/globalPlugins/newsHub/network.py:557
+msgid ""
+"Failed to reach {site_label} (DNS error or no network). Please check your "
+"internet connection and try again."
+msgstr ""
+"Gagal menghubungi {site_label} (kesalahan DNS atau tidak ada jaringan). "
+"Periksa koneksi internet dan coba lagi."
+
+#: addon/globalPlugins/newsHub/network.py:433
+msgid "Page size from {site} is too large to load safely."
+msgstr "Ukuran halaman dari {site} terlalu besar untuk dimuat secara aman."
+
+#: addon/globalPlugins/newsHub/network.py:544
+msgid ""
+"Too many requests to {site_label} (HTTP 429). Please wait a moment and try "
+"again."
+msgstr ""
+"Terlalu banyak permintaan ke {site_label} (HTTP 429). Tunggu beberapa saat "
+"lalu coba lagi."
+
+#: addon/globalPlugins/newsHub/network.py:559
+msgid "Failed to verify a secure connection (SSL/TLS) to {site_label}."
+msgstr "Gagal memverifikasi koneksi aman (SSL/TLS) ke {site_label}."
+
+#: addon/globalPlugins/newsHub/network.py:561
+msgid ""
+"Failed to connect to {site}. Please check your internet connection and try "
+"again."
+msgstr "Gagal menghubungi {site}. Periksa koneksi internet dan coba lagi."
+
+#: addon/globalPlugins/newsHub/network.py:546
+msgid ""
+"{site_label} server is currently experiencing issues (HTTP {code}). Please "
+"try again later."
+msgstr ""
+"Server {site_label} sedang mengalami gangguan (HTTP {code}). Silakan coba "
+"lagi nanti."
+
+#: addon/globalPlugins/newsHub/network.py:548
+msgid "Failed to load page from {site_label} (HTTP status {code})."
+msgstr "Gagal memuat halaman dari {site_label} (Kode HTTP {code})."
+
+#: addon/globalPlugins/newsHub/sources.py:29
+msgid "general news"
+msgstr "berita umum"
+
+#: addon/globalPlugins/newsHub/sources.py:37
+msgid "domestic news"
+msgstr "berita dalam negeri"
+
+#: addon/globalPlugins/newsHub/sources.py:45
+msgid "international news"
+msgstr "berita internasional"
+
+#: addon/globalPlugins/newsHub/sources.py:53
+msgid "Greater Jakarta news"
+msgstr "Jakarta dan sekitarnya"
+
+#: addon/globalPlugins/newsHub/sources.py:61
+msgid "regional news across Indonesia"
+msgstr "berita daerah"
+
+#: addon/globalPlugins/newsHub/sources.py:69
+msgid "general elections"
+msgstr "pemilihan umum"
+
+#: addon/globalPlugins/newsHub/sources.py:77
+msgid "Nusantara Capital City"
+msgstr "Ibu Kota Nusantara"
+
+#: addon/globalPlugins/newsHub/sources.py:85
+msgid "football and sports"
+msgstr "sepak bola"
+
+#: addon/globalPlugins/newsHub/sources.py:93
+msgid "technology and digital"
+msgstr "teknologi dan digital"
+
+#: addon/globalPlugins/newsHub/sources.py:101
+msgid "vehicles and automotive industry"
+msgstr "kendaraan dan industri otomotif"
+
+#: addon/globalPlugins/newsHub/sources.py:109
+msgid "entertainment world"
+msgstr "dunia hiburan"
+
+#: addon/globalPlugins/newsHub/sources.py:117
+msgid "science and research"
+msgstr "ilmu pengetahuan"
+
+#: addon/globalPlugins/newsHub/sources.py:125
+msgid "health and wellness"
+msgstr "kesehatan"
+
+#: addon/globalPlugins/newsHub/sources.py:133
+msgid "economy and finance"
+msgstr "ekonomi dan keuangan"
+
+#: addon/globalPlugins/newsHub/sources.py:141
+msgid "trending topics"
+msgstr "topik yang sedang ramai"
+
+#: addon/globalPlugins/newsHub/sources.py:149
+msgid "housing and real estate"
+msgstr "rumah dan properti"
+
+#: addon/globalPlugins/newsHub/sources.py:157
+msgid "lifestyle and fashion"
+msgstr "gaya hidup"
+
+#: addon/globalPlugins/newsHub/sources.py:165
+msgid "celebrity news and pop culture"
+msgstr "kabar selebritas dan budaya populer"
+
+#: addon/globalPlugins/newsHub/sources.py:173
+msgid "tourism and travel"
+msgstr "wisata dan perjalanan"
+
+#: addon/globalPlugins/newsHub/sources.py:181
+msgid "home and domestic living"
+msgstr "rumah dan kehidupan domestik"
+
+#: addon/globalPlugins/newsHub/sources.py:189
+msgid "food and culinary"
+msgstr "makanan dan kuliner"
+
+#: addon/globalPlugins/newsHub/sources.py:197
+msgid "micro, small, and medium enterprises"
+msgstr "usaha mikro, kecil, dan menengah"
+
+#: addon/globalPlugins/newsHub/sources.py:205
+msgid "education"
+msgstr "pendidikan"
+
+#: addon/globalPlugins/newsHub/sources.py:218
+msgid "breaking national and political news"
+msgstr "berita terkini nasional dan politik"
+
+#: addon/globalPlugins/newsHub/sources.py:226
+msgid "economy, business, and investment"
+msgstr "ekonomi, bisnis, dan investasi"
+
+#: addon/globalPlugins/newsHub/sources.py:234
+msgid "information technology, gadgets, and internet"
+msgstr "teknologi informasi, gadget, dan internet"
+
+#: addon/globalPlugins/newsHub/sources.py:242
+msgid "entertainment, celebrities, and music"
+msgstr "hiburan, selebritas, dan musik"
+
+#: addon/globalPlugins/newsHub/sources.py:250
+msgid "national and international sports"
+msgstr "olahraga nasional dan internasional"
+
+#: addon/globalPlugins/newsHub/sources.py:258
+msgid "football news and world leagues"
+msgstr "berita sepak bola dan liga dunia"
+
+#: addon/globalPlugins/newsHub/sources.py:266
+msgid "automotive, cars, and motorcycles"
+msgstr "otomotif, mobil, dan motor"
+
+#: addon/globalPlugins/newsHub/sources.py:274
+msgid "travel destinations and tourism"
+msgstr "destinasi wisata dan perjalanan"
+
+#: addon/globalPlugins/newsHub/sources.py:282
+msgid "culinary, recipes, and dining"
+msgstr "kuliner, resep, dan tempat makan"
+
+#: addon/globalPlugins/newsHub/sources.py:290
+msgid "health, medicine, and fitness"
+msgstr "kesehatan, medis, dan kebugaran"
+
+#: addon/globalPlugins/newsHub/sources.py:298
+msgid "lifestyle, fashion, and beauty"
+msgstr "gaya hidup, mode, dan kecantikan"
+
+#: addon/globalPlugins/newsHub/sources.py:306
+msgid "in-depth and investigative journalism"
+msgstr "jurnalisme mendalam dan investigasi"
+
+#: addon/globalPlugins/newsHub/sources.py:314
+msgid "video news and visual reports"
+msgstr "berita video dan laporan visual"
+
+#: addon/globalPlugins/newsHub/sources.py:322
+msgid "photojournalism and visual events"
+msgstr "jurnalisme foto dan peristiwa visual"
+
+#: addon/globalPlugins/newsHub/sources.py:330
+msgid "education, schools, and higher learning"
+msgstr "pendidikan, sekolah, dan perguruan tinggi"
+
+#: addon/globalPlugins/newsHub/sources.py:338
+msgid "Islamic world and religious inspiration"
+msgstr "dunia Islam dan inspirasi religi"
+
+#: addon/globalPlugins/newsHub/sources.py:346
+msgid "housing, architecture, and real estate"
+msgstr "hunian, arsitektur, dan properti"
+
+#: addon/globalPlugins/newsHub/sources.py:354
+msgid "pop culture, K-Pop, movies, and anime"
+msgstr "budaya pop, K-Pop, film, dan anime"
+
+#: addon/globalPlugins/newsHub/sources.py:362
+msgid "Central Java regional news"
+msgstr "berita daerah Jawa Tengah"
+
+#: addon/globalPlugins/newsHub/sources.py:370
+msgid "East Java regional news"
+msgstr "berita daerah Jawa Timur"
+
+#: addon/globalPlugins/newsHub/sources.py:378
+msgid "West Java regional news"
+msgstr "berita daerah Jawa Barat"
+
+#: addon/globalPlugins/newsHub/sources.py:386
+msgid "South Sulawesi regional news"
+msgstr "berita daerah Sulawesi Selatan"
+
+#: addon/globalPlugins/newsHub/sources.py:394
+msgid "North Sumatra regional news"
+msgstr "berita daerah Sumatera Utara"
+
+#: addon/globalPlugins/newsHub/sources.py:402
+msgid "Bali and Nusa Tenggara regional news"
+msgstr "berita daerah Bali dan Nusa Tenggara"
+
+#: addon/globalPlugins/newsHub/sources.py:410
+msgid "Southern Sumatra regional news"
+msgstr "berita daerah Sumatera Bagian Selatan"
+
+#: addon/globalPlugins/newsHub/sources.py:418
+msgid "Yogyakarta special region news"
+msgstr "berita daerah DI Yogyakarta dan sekitarnya"
+
+#: addon/globalPlugins/newsHub/sources.py:426
+msgid "Kalimantan regional news"
+msgstr "berita daerah Kalimantan"
+
+#: addon/globalPlugins/newsHub/sources.py:439
+msgid "politics, law, crime, and national events"
+msgstr "politik, hukum, kriminal, dan peristiwa nasional"
+
+#: addon/globalPlugins/newsHub/sources.py:447
+msgid "international news and global geopolitics"
+msgstr "berita mancanegara dan geopolitik dunia"
+
+#: addon/globalPlugins/newsHub/sources.py:455
+msgid "finance, energy, business, and macroeconomics"
+msgstr "keuangan, energi, bisnis, dan makroekonomi"
+
+#: addon/globalPlugins/newsHub/sources.py:463
+msgid "football, MotoGP, F1, and badminton"
+msgstr "sepak bola, MotoGP, F1, dan bulu tangkis"
+
+#: addon/globalPlugins/newsHub/sources.py:471
+msgid "information technology, science, and telecommunications"
+msgstr "teknologi informasi, sains, dan telekomunikasi"
+
+#: addon/globalPlugins/newsHub/sources.py:479
+msgid "cars, motorcycles, and electric vehicles"
+msgstr "mobil, motor, dan kendaraan listrik"
+
+#: addon/globalPlugins/newsHub/sources.py:487
+msgid "movies, music, celebrities, and culture"
+msgstr "film, musik, selebritas, dan budaya"
+
+#: addon/globalPlugins/newsHub/sources.py:495
+msgid "health, culinary, and travel lifestyle"
+msgstr "kesehatan, kuliner, dan wisata"
+
+#: addon/globalPlugins/newsHub/sources.py:508
+msgid "capital markets, stocks, forex, and commodities"
+msgstr "pasar modal, saham, valas, dan komoditas"
+
+#: addon/globalPlugins/newsHub/sources.py:516
+msgid "personal finance, planning, and investment"
+msgstr "keuangan pribadi, perencanaan, dan investasi"
+
+#: addon/globalPlugins/newsHub/sources.py:524
+msgid "breaking economic, business, and national policy news"
+msgstr "berita terkini ekonomi, bisnis, dan kebijakan nasional"
+
+#: addon/globalPlugins/newsHub/sources.py:532
+msgid "fintech, startups, and digital economy"
+msgstr "teknologi finansial, startup, dan ekonomi digital"
+
+#: addon/globalPlugins/newsHub/sources.py:540
+msgid "modern lifestyle, trends, and entertainment"
+msgstr "gaya hidup modern, tren, dan hiburan"
+
+#: addon/globalPlugins/newsHub/sources.py:548
+msgid "Islamic economy and sharia finance"
+msgstr "ekonomi dan keuangan syariah"
+
+#: addon/globalPlugins/newsHub/sources.py:556
+msgid "entrepreneurship, SMEs, and business inspiration"
+msgstr "wirausaha, UMKM, dan inspirasi bisnis"
+
+#: addon/globalPlugins/newsHub/sources.py:569
+msgid "interactive features and word games by Tempo"
+msgstr "fitur interaktif dan permainan kata Tempo"
+
+#: addon/globalPlugins/newsHub/sources.py:577
+msgid "national political dynamics and government"
+msgstr "dinamika politik nasional dan pemerintahan"
+
+#: addon/globalPlugins/newsHub/sources.py:585
+msgid "law, judiciary, and anti-corruption"
+msgstr "hukum, peradilan, dan pemberantasan korupsi"
+
+#: addon/globalPlugins/newsHub/sources.py:593
+msgid "business, macroeconomics, and fiscal policy"
+msgstr "bisnis, makroekonomi, dan kebijakan fiskal"
+
+#: addon/globalPlugins/newsHub/sources.py:601
+msgid "climate, ecology, and environmental conservation"
+msgstr "iklim, ekologi, dan pelestarian alam"
+
+#: addon/globalPlugins/newsHub/sources.py:609
+msgid "exclusive interviews with key figures"
+msgstr "wawancara eksklusif bersama tokoh kunci"
+
+#: addon/globalPlugins/newsHub/sources.py:617
+msgid "Tempo signature in-depth investigative reporting"
+msgstr "liputan investigasi mendalam khas Tempo"
+
+#: addon/globalPlugins/newsHub/sources.py:625
+msgid "fact-checking and claim verification"
+msgstr "verifikasi fakta dan pemeriksaan klaim"
+
+#: addon/globalPlugins/newsHub/sources.py:633
+msgid "in-depth profiles and stories of notable figures"
+msgstr "profil mendalam dan kisah tokoh inspiratif"
+
+#: addon/globalPlugins/newsHub/sources.py:641
+msgid "curated newsletter editions by Tempo editorial team"
+msgstr "buletin kurasi isu pilihan redaksi Tempo"
+
+#: addon/globalPlugins/newsHub/sources.py:649
+msgid "partnership announcements and Tempo collaborations"
+msgstr "informasi kemitraan dan kolaborasi Tempo"
+
+#: addon/globalPlugins/newsHub/sources.py:662
+msgid "KG Media national and international news portal (Indonesia)"
+msgstr "Portal berita nasional dan internasional KG Media (Indonesia)"
+
+#: addon/globalPlugins/newsHub/sources.py:671
+msgid "Indonesian national, regional, and thematic breaking news portal"
+msgstr "Portal berita terkini nasional, daerah, dan tematik Indonesia"
+
+#: addon/globalPlugins/newsHub/sources.py:680
+msgid "Trans Media national, international, and economic news portal"
+msgstr "Portal berita terkini nasional, internasional, dan ekonomi Trans Media"
+
+#: addon/globalPlugins/newsHub/sources.py:689
+msgid "Capital markets, investment, business, and fintech news portal"
+msgstr "Portal berita pasar modal, investasi, bisnis, dan teknologi finansial"
+
+#: addon/globalPlugins/newsHub/sources.py:698
+msgid "Investigative, political, legal, and fact-checking news portal"
+msgstr "Portal berita investigasi, politik, hukum, dan cek fakta Indonesia"
+
+#: buildVars.py:21
+msgid "NewsHub for NVDA"
+msgstr "NewsHub for NVDA"
+
+#: buildVars.py:24
+msgid ""
+"Reading news from various national and international news portals such as "
+"kompas.com, detik.com, and others is truly enjoyable. Aside from providing "
+"reliable information, it also broadens our knowledge as readers.\n"
+"However, as we know, the web pages of these news portals are not friendly to"
+" screen readers.\n"
+"There are many advertisements and complex navigation elements that make "
+"reading difficult.\n"
+"That is why \"NewsHub For NVDA\" is here!\n"
+"\n"
+"With this add-on, you can read news from trusted news portals easily and "
+"comfortably. In this version, the add-on supports Kompas.com (23 rubrics), "
+"Detik.com (27 rubrics), CNN Indonesia (8 rubrics), CNBC Indonesia (7 "
+"rubrics), and Tempo.co (11 rubrics), complete with cross-portal keyword "
+"search, an accessible HTML reading view with NVDA Browse Mode navigation, "
+"and inline HTML5 photo and video playback (<video> and <img>) directly "
+"inside the article view.\n"
+"Happy reading!\n"
+"\n"
+"Keyboard Shortcuts:\n"
+"- NVDA+Shift+K: Open the NewsHub for NVDA dashboard from anywhere.\n"
+"- Ctrl+F: Jump to the cross-portal keyword search box.\n"
+"- Tab / Shift+Tab: Navigate between controls in the dashboard.\n"
+"- Up / Down Arrow: Select a news site, rubric, or article title, or read "
+"article content in the HTML viewer.\n"
+"- H / K / T / G / L: Navigate headings, links, tables, graphics, and lists "
+"in the HTML article reading area (NVDA Browse Mode).\n"
+"- Alt+[: Navigate to the previous article in the active list.\n"
+"- Alt+]: Navigate to the next article in the active list.\n"
+"- F5: Refresh the article list for the active rubric or search.\n"
+"- Ctrl+R: Reload the full content of the currently selected article.\n"
+"- Alt+R: Return focus to the rubric selection control.\n"
+"- Alt+S: Return focus to the news site selection control.\n"
+"- Escape: Clear active search results and restore the default view, or "
+"contextually return to the previous stage / close the dashboard."
+msgstr ""
+"Membaca berita dari berbagai portal berita nasional maupun internasional "
+"seperti kompas.com, detik.com, dan lainnya memang sangat menyenangkan. "
+"Selain memberikan informasi yang akurat, hal tersebut juga menambah wawasan "
+"kita sebagai pembaca.\n"
+"Namun seperti yang kita ketahui, halaman web dari portal-portal berita "
+"tersebut tidak ramah bagi pembaca layar.\n"
+"Banyak iklan serta navigasi yang rumit sehingga menyulitkan saat membaca.\n"
+"Oleh karena itu, \"NewsHub For NVDA\" hadir!\n"
+"\n"
+"Dengan add-on ini, kamu dapat membaca berita dari portal-portal berita "
+"tepercaya dengan mudah dan nyaman. Pada versi ini, add-on mendukung "
+"Kompas.com (23 rubrik), Detik.com (27 rubrik), CNN Indonesia (8 rubrik), "
+"CNBC Indonesia (7 rubrik), dan Tempo.co (11 rubrik), lengkap dengan fitur "
+"pencarian berita lintas situs, tampilan baca HTML standar dengan dukungan "
+"navigasi Browse Mode NVDA layaknya peramban web, serta penampil foto (<img>)"
+" dan pemutar video HTML5 (<video>) langsung di dalam area baca artikel.\n"
+"Selamat membaca!\n"
+"\n"
+"Pintasan Keyboard:\n"
+"- NVDA+Shift+K: Membuka dashboard NewsHub for NVDA dari mana saja.\n"
+"- Ctrl+F: Berpindah cepat ke kotak pencarian berita lintas situs.\n"
+"- Tab / Shift+Tab: Berpindah antar-kontrol di dalam dashboard.\n"
+"- Panah Atas / Bawah: Memilih situs berita, rubrik, atau judul artikel, "
+"serta membaca isi artikel pada penampil HTML.\n"
+"- H / K / T / G / L: Navigasi heading, tautan, tabel, grafik/foto, dan "
+"daftar pada area baca artikel HTML (Mode Jelajah / Browse Mode NVDA).\n"
+"- Alt+[: Berpindah ke artikel sebelumnya pada daftar aktif.\n"
+"- Alt+]: Berpindah ke artikel berikutnya pada daftar aktif.\n"
+"- F5: Memperbarui daftar berita pada rubrik atau pencarian yang sedang "
+"aktif.\n"
+"- Ctrl+R: Memuat ulang isi lengkap artikel yang sedang dipilih.\n"
+"- Alt+R: Mengembalikan fokus ke kontrol pemilihan rubrik.\n"
+"- Alt+S: Mengembalikan fokus ke kontrol pemilihan situs berita.\n"
+"- Escape: Membersihkan hasil pencarian dan mengembalikan tampilan ke "
+"default, atau kembali ke tahap sebelumnya / menutup dashboard."
+
+#: buildVars.py:29
+msgid ""
+"Version 1.3.0:\n"
+"- Added cross-portal news search by keyword across all 5 supported portals "
+"(Kompas.com, Detik.com, CNN Indonesia, CNBC Indonesia, and Tempo.co) with "
+"automatic hiding of site/rubric selectors during active search and Escape to"
+" restore the default view.\n"
+"- Replaced the plain text reading area with a standard HTML article viewer "
+"supporting full NVDA Browse Mode navigation (headings, paragraphs, lists, "
+"tables, links, and media).\n"
+"- Embedded article photos (<img> / <figure>) and videos (HTML5 <video "
+"controls> and embedded players) directly inline inside the HTML article "
+"reading view just like a web browser, without requiring a separate "
+"standalone video player."
+msgstr ""
+"Versi 1.3.0:\n"
+"- Menambahkan fitur pencarian berita berdasarkan kata kunci pada seluruh 5 "
+"situs berita (Kompas.com, Detik.com, CNN Indonesia, CNBC Indonesia, dan "
+"Tempo.co) dengan penyembunyian otomatis pilihan situs/rubrik saat hasil "
+"ditampilkan serta tombol Escape untuk kembali ke tampilan awal.\n"
+"- Mengganti area baca teks biasa dengan penampil artikel HTML standar yang "
+"mendukung navigasi Browse Mode NVDA secara penuh (heading, paragraf, daftar,"
+" tabel, tautan, dan media) seperti membaca di peramban web.\n"
+"- Menampilkan foto (<img> / <figure>) dan memutar video (HTML5 <video "
+"controls> serta pemutar tersemat) secara langsung di dalam tampilan baca "
+"HTML tanpa jendela pemutar video terpisah."
+
+#: addon/globalPlugins/newsHub/dialogs.py:604
+#: addon/globalPlugins/newsHub/dialogs.py:944
+msgid "HTML &Browse Mode (Alt+H)"
+msgstr "Mode &Jelajah HTML (Alt+H)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:605
+#: addon/globalPlugins/newsHub/dialogs.py:945
+msgid "HTML Browse Mode (Alt+H)"
+msgstr "Mode Jelajah HTML (Alt+H)"
+
+#: addon/globalPlugins/newsHub/dialogs.py:729
+msgid ""
+"Loading full article content. HTML Browse Mode will open automatically once "
+"loaded."
+msgstr ""
+"Sedang memuat isi lengkap artikel. Mode Jelajah HTML akan terbuka otomatis "
+"setelah selesai dimuat."
+
+#: addon/globalPlugins/newsHub/formatter.py:145
+msgid "View Photo"
+msgstr "Lihat Foto"
+
+#: addon/globalPlugins/newsHub/formatter.py:181
+msgid "Play Video"
+msgstr "Putar Video"
+
+#: addon/globalPlugins/newsHub/formatter.py:83
+msgid "[End of Table]"
+msgstr "[End of Table]"
+
+#: addon/globalPlugins/newsHub/formatter.py:70
+msgid "Table Columns: {columns}"
+msgstr "Table Columns: {columns}"
+
+#: addon/globalPlugins/newsHub/formatter.py:81
+msgid "Row {row_num}: {content}"
+msgstr "Row {row_num}: {content}"
+

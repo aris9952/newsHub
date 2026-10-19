@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>NewsHub for NVDA — User Documentation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>NewsHub for NVDA 1.3.0</title>
 </head>
 <body>
-<h1>NewsHub for NVDA (Version 1.0.0)</h1>
-<p><strong>Author:</strong> Aris Yohanes Elean, S.Kom<br>
-<strong>Supported NVDA Version:</strong> up to 2026.1 (minimum 2022.1)</p>
-
-<h2>Description</h2>
-<p>Reading news from various national and international news portals such as kompas.com, detik.com, and others is truly enjoyable. Not only is the news presented reliable, but it also broadens our knowledge as readers.<br>
-However, as we know, the web pages of these news portals are often not friendly to screen readers.<br>
-They are cluttered with advertisements and complex navigation that make reading difficult.<br>
-That is why <strong>"NewsHub for NVDA"</strong> is here!</p>
-
-<p>With this add-on, you can read news from trusted news portals easily and comfortably. For this current version, the add-on supports <strong>kompas.com</strong> (across all 23 official rubrics), and support for other news portals will follow soon.<br>
-Happy reading!</p>
-
-<h2>Language &amp; Settings (NVDA Preferences)</h2>
-<p>You can configure the add-on language (<strong>Bahasa Indonesia</strong> or <strong>English</strong>), color theme, font size (85%&ndash;150%), font family, paragraph spacing, and background auto-refresh interval through:</p>
+<h1>NewsHub for NVDA</h1>
 <ul>
-  <li><strong>NVDA Menu &rarr; Preferences &rarr; Settings... &rarr; NewsHub for NVDA</strong></li>
-  <li><strong>NVDA Menu &rarr; Preferences &rarr; NewsHub for NVDA Settings...</strong></li>
-  <li>Or by pressing the <strong>Accessibility Settings...</strong> button directly inside the NewsHub dashboard.</li>
+<li><strong>Author:</strong> Aris Yohanes Elean, S.Kom</li>
+<li><strong>Version:</strong> 1.2.1</li>
+<li><strong>Supported NVDA Versions:</strong> 2022.1.0 – 2026.1.0</li>
 </ul>
-
+<h2>Overview</h2>
+<p>Reading news from various national and international news portals such as kompas.com, detik.com, and others is truly enjoyable. Aside from providing reliable information, it also broadens our knowledge as readers.
+However, as we know, the web pages of these news portals are not friendly to screen readers.
+There are many advertisements and complex navigation elements that make reading difficult.
+That is why <strong>"NewsHub For NVDA"</strong> is here!</p>
+<p>With this add-on, you can read news from trusted news portals easily and comfortably. In version 1.2.1, the add-on supports <strong>5 major Indonesian news portals</strong> across <strong>76 official rubrics</strong>:</p>
+<ul>
+<li><strong>Kompas.com (23 Rubrics):</strong> News, Nasional, Global, Megapolitan, Regional, Pemilu, IKN, Bola, Tekno, Otomotif, Entertainment, Sains, Health, Money, Tren, Properti, Lifestyle, Hype, Travel, Homey, Food, UMKM, Edukasi.</li>
+<li><strong>Detik.com (27 Rubrics):</strong> Detik news, Detik finance, DetikInet, DetikHot, DetikSport, SepakBola, DetikOto, DetikTravel, DetikFood, Detik Health, Wolipop, DetikX, 20Detik, DetikFoto, DetikEdu, DetikHikmah, DetikProperti, DetikPop, DetikJateng, DetikJatim, DetikJabar, DetikSulsel, DetikSumut, DetikBali, DetikSumbagsel, DetikJogja, DetikKalimantan.</li>
+<li><strong>CNN Indonesia (8 Rubrics):</strong> Nasional, Internasional, Ekonomi, Olahraga, Teknologi, Otomotif, Hiburan, Gaya hidup.</li>
+<li><strong>CNBC Indonesia (7 Rubrics):</strong> Market, My Money, News, Tech, LifeStyle, Sharia, Entrepreneur.</li>
+<li><strong>Tempo.co (11 Rubrics):</strong> Permainan baru, Politik, Hukum, Ekonomi, Lingkungan, Wawancara, Investigasi, Cek fakta, Tokoh, Newsletter, Info tempo.</li>
+</ul>
 <h2>Keyboard Shortcuts</h2>
-<table border="1" cellpadding="6" cellspacing="0">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Scope</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>NVDA+Shift+K</code></td>
-      <td>Global</td>
-      <td>Open or focus the NewsHub for NVDA dashboard</td>
-    </tr>
-    <tr>
-      <td><code>Alt+[</code></td>
-      <td>Dashboard</td>
-      <td>Open the previous article in the active rubric</td>
-    </tr>
-    <tr>
-      <td><code>Alt+]</code></td>
-      <td>Dashboard</td>
-      <td>Open the next article in the active rubric</td>
-    </tr>
-    <tr>
-      <td><code>F5</code></td>
-      <td>Dashboard</td>
-      <td>Refresh the article list for the active rubric</td>
-    </tr>
-    <tr>
-      <td><code>Ctrl+R</code></td>
-      <td>Dashboard</td>
-      <td>Reload the full content of the currently selected article</td>
-    </tr>
-    <tr>
-      <td><code>Esc</code></td>
-      <td>Dashboard</td>
-      <td>Step back to the previous selection stage (Article Content &rarr; Article List &rarr; Rubric &rarr; Portal) or close the dashboard</td>
-    </tr>
-  </tbody>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Shortcut</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>NVDA+Shift+K</strong></td>
+<td style="text-align: left;">Open the NewsHub for NVDA dashboard from anywhere</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tab / Shift+Tab</strong></td>
+<td style="text-align: left;">Move focus across dashboard controls in the 12-step focus order</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Up / Down Arrow</strong></td>
+<td style="text-align: left;">Select a news site, rubric, or article title, or read article content line by line</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alt+[</strong></td>
+<td style="text-align: left;">Go to the previous article in the active rubric list</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alt+]</strong></td>
+<td style="text-align: left;">Go to the next article in the active rubric list</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>F5</strong></td>
+<td style="text-align: left;">Refresh the article list for the active rubric</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ctrl+R</strong></td>
+<td style="text-align: left;">Reload the full content of the currently selected article</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alt+R</strong></td>
+<td style="text-align: left;">Return focus to the rubric selection control</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alt+S</strong></td>
+<td style="text-align: left;">Return focus to the news site selection control</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Escape</strong></td>
+<td style="text-align: left;">Contextually return to the previous stage or close the dashboard</td>
+</tr>
+</tbody>
 </table>
 </body>
 </html>

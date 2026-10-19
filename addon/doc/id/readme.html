@@ -1,72 +1,80 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<title>NewsHub for NVDA — Dokumentasi Pengguna</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen">
+<title>NewsHub for NVDA 1.3.0</title>
 </head>
 <body>
-<h1>NewsHub for NVDA (Versi 1.0.0)</h1>
-<p><strong>Penulis:</strong> Aris Yohanes Elean, S.Kom<br>
-<strong>Versi NVDA yang Didukung:</strong> hingga 2026.1 (minimum 2022.1)</p>
-
-<h2>Deskripsi</h2>
-<p>Membaca berita dari berbagai situs berita nasional maupun internasional seperti kompas.com, detik.com, dan sebagainya memang sangat menyenangkan. Selain berita yang disajikan dapat dipercaya, juga menambah pengetahuan kita sebagai pembaca.<br>
-Namun, sebagaimana yang kita ketahui, bahwa halaman situs-situs berita tersebut tidak bersahabat dengan pembaca layar.<br>
-Banyak iklan dan navigasi yang menyulitkan.<br>
-Untuk itulah <strong>"NewsHub For NVDA"</strong> ini hadir!</p>
-
-<p>Dengan addon ini, Anda dapat membaca berita dari situs berita terpercaya dengan mudah dan nyaman. Untuk versi kali ini, addon ini baru mendukung situs <strong>kompas.com</strong> (seluruh 23 rubrik resmi), namun akan segera menyusul untuk situs berita lainnya.<br>
-Selamat membaca!</p>
-
-<h2>Pengaturan Bahasa &amp; Tampilan (NVDA Preferences)</h2>
-<p>Anda dapat memilih bahasa antarmuka (<strong>Bahasa Indonesia</strong> atau <strong>English</strong>), tema warna, ukuran huruf (85%&ndash;150%), jenis huruf, spasi paragraf, serta pembaruan otomatis melalui:</p>
+<h1>NewsHub for NVDA — Pembaca Berita Multisitus</h1>
 <ul>
-  <li><strong>Menu NVDA &rarr; Preferensi (Preferences) &rarr; Pengaturan (Settings)... &rarr; NewsHub for NVDA</strong></li>
-  <li><strong>Menu NVDA &rarr; Preferensi (Preferences) &rarr; Pengaturan NewsHub for NVDA...</strong></li>
-  <li>Atau melalui tombol <strong>Pengaturan Aksesibilitas...</strong> di dalam dashboard NewsHub.</li>
+<li><strong>Pembuat:</strong> Aris Yohanes Elean, S.Kom</li>
+<li><strong>Versi:</strong> 1.2.1</li>
+<li><strong>Versi NVDA yang Didukung:</strong> 2022.1.0 – 2026.1.0</li>
 </ul>
-
-<h2>Daftar Pintasan Keyboard (Keyboard Shortcuts)</h2>
-<table border="1" cellpadding="6" cellspacing="0">
-  <thead>
-    <tr>
-      <th>Pintasan</th>
-      <th>Konteks</th>
-      <th>Fungsi</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>NVDA+Shift+K</code></td>
-      <td>Global</td>
-      <td>Membuka atau memfokuskan dashboard NewsHub for NVDA</td>
-    </tr>
-    <tr>
-      <td><code>Alt+[</code></td>
-      <td>Dashboard</td>
-      <td>Membuka artikel sebelumnya dalam rubrik aktif</td>
-    </tr>
-    <tr>
-      <td><code>Alt+]</code></td>
-      <td>Dashboard</td>
-      <td>Membuka artikel berikutnya dalam rubrik aktif</td>
-    </tr>
-    <tr>
-      <td><code>F5</code></td>
-      <td>Dashboard</td>
-      <td>Memperbarui daftar berita pada rubrik aktif</td>
-    </tr>
-    <tr>
-      <td><code>Ctrl+R</code></td>
-      <td>Dashboard</td>
-      <td>Memuat ulang isi lengkap artikel yang dipilih</td>
-    </tr>
-    <tr>
-      <td><code>Esc</code></td>
-      <td>Dashboard</td>
-      <td>Kembali ke tahap sebelumnya (Isi Berita &rarr; Daftar Artikel &rarr; Rubrik &rarr; Situs) atau menutup dashboard</td>
-    </tr>
-  </tbody>
+<h2>Gambaran Umum</h2>
+<p>Membaca berita dari berbagai situs berita nasional maupun internasional seperti kompas.com, detik.com, dan sebagainya memang sangat menyenangkan. Selain berita yang disajikan dapat dipercaya, juga menambah pengetahuan kita sebagai pembaca.
+Namun, sebagaimana yang kita ketahui, halaman situs-situs berita tersebut tidak bersahabat dengan pembaca layar karena banyaknya iklan dan navigasi yang menyulitkan.
+Untuk itulah <strong>"NewsHub For NVDA"</strong> hadir!</p>
+<p>Pada versi 1.2.1 ini, add-on mendukung penuh <strong>5 portal berita utama Indonesia</strong> dengan total <strong>76 rubrik resmi</strong>:</p>
+<ul>
+<li><strong>Kompas.com (23 Rubrik):</strong> News, Nasional, Global, Megapolitan, Regional, Pemilu, IKN, Bola, Tekno, Otomotif, Entertainment, Sains, Health, Money, Tren, Properti, Lifestyle, Hype, Travel, Homey, Food, UMKM, Edukasi.</li>
+<li><strong>Detik.com (27 Rubrik):</strong> Detik news, Detik finance, DetikInet, DetikHot, DetikSport, SepakBola, DetikOto, DetikTravel, DetikFood, Detik Health, Wolipop, DetikX, 20Detik, DetikFoto, DetikEdu, DetikHikmah, DetikProperti, DetikPop, DetikJateng, DetikJatim, DetikJabar, DetikSulsel, DetikSumut, DetikBali, DetikSumbagsel, DetikJogja, DetikKalimantan.</li>
+<li><strong>CNN Indonesia (8 Rubrik):</strong> Nasional, Internasional, Ekonomi, Olahraga, Teknologi, Otomotif, Hiburan, Gaya hidup.</li>
+<li><strong>CNBC Indonesia (7 Rubrik):</strong> Market, My Money, News, Tech, LifeStyle, Sharia, Entrepreneur.</li>
+<li><strong>Tempo.co (11 Rubrik):</strong> Permainan baru, Politik, Hukum, Ekonomi, Lingkungan, Wawancara, Investigasi, Cek fakta, Tokoh, Newsletter, Info tempo.</li>
+</ul>
+<h2>Pintasan Keyboard</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pintasan</th>
+<th style="text-align: left;">Tindakan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>NVDA+Shift+K</strong></td>
+<td style="text-align: left;">Membuka dashboard NewsHub for NVDA dari mana saja</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tab / Shift+Tab</strong></td>
+<td style="text-align: left;">Berpindah antar-kontrol dalam 12 urutan fokus standar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Panah Atas / Bawah</strong></td>
+<td style="text-align: left;">Memilih situs berita, rubrik, atau judul artikel, serta membaca isi berita per baris</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alt+[</strong></td>
+<td style="text-align: left;">Artikel sebelumnya dalam daftar rubrik aktif</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alt+]</strong></td>
+<td style="text-align: left;">Artikel berikutnya dalam daftar rubrik aktif</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>F5</strong></td>
+<td style="text-align: left;">Memperbarui daftar berita pada rubrik aktif</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ctrl+R</strong></td>
+<td style="text-align: left;">Memuat ulang isi lengkap artikel yang sedang dipilih</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alt+R</strong></td>
+<td style="text-align: left;">Kembali ke kontrol pemilihan rubrik berita</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alt+S</strong></td>
+<td style="text-align: left;">Kembali ke kontrol pemilihan situs berita</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Escape</strong></td>
+<td style="text-align: left;">Kembali ke tahap sebelumnya secara kontekstual atau menutup dashboard</td>
+</tr>
+</tbody>
 </table>
 </body>
 </html>

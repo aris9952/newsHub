@@ -573,15 +573,19 @@ def _clean_paragraph_text(text: str) -> str:
 	return cleaned
 
 
-def _extract_clean_blocks_from_container(container_node: _DOMNode, blocks: List[Dict[str, Any]]) -> None:
+def _extract_clean_blocks_from_container(container_node: _DOMNode, blocks: List[Dict[str, Any]], page_url: str = "") -> None:
 	"""
-	Recursively extract clean content blocks (h2/h3/h4, p, blockquote, ul, ol, table, caption)
+	Recursively extract clean content blocks (h2/h3/h4, p, blockquote, ul, ol, table, image, video, caption)
 	while preserving logical reading order.
 	"""
 	for child in container_node.children:
 		if not isinstance(child, _DOMNode):
 			continue
-		if _is_excluded_node(child) or _is_baca_juga_inline_node(child):
+		if _is_baca_juga_inline_node(child):
+			continue
+		if _extract_inline_media_blocks_from_node(child, blocks, page_url):
+			continue
+		if _is_excluded_node(child):
 			continue
 
 		t = child.tag
@@ -626,7 +630,7 @@ def _extract_clean_blocks_from_container(container_node: _DOMNode, blocks: List[
 
 		else:
 			# Traverse wrapper div/section/article/span elements inside the article container
-			_extract_clean_blocks_from_container(child, blocks)
+			_extract_clean_blocks_from_container(child, blocks, page_url=page_url)
 
 
 def detect_kompas_all_pages_url(html_string: str, current_url: str) -> Optional[str]:
@@ -683,6 +687,414 @@ def _parse_credit_names(raw_credit: str) -> Tuple[str, str]:
 		author = cleaned.strip(" :-|,")
 
 	return author, editor
+
+
+
+
+# Substrings in image URLs that indicate logos, icons, avatars, or ad trackers rather than news photos
+NON_PHOTO_URL_SUBSTRINGS: Tuple[str, ...] = (
+	"logo", "icon", "avatar", "sprite", "pixel", "1x1", "blank.", "placeholder",
+	"loading", "spinner", "ads/", "/ads", "banner", "button", "badge",
+	"whatsapp", "facebook", "twitter", "telegram", "instagram", "linkedin",
+	"tiktok", "youtube-icon", "google-news", "gnews", "kompas-id", " doubleclick",
+	"scorecardresearch", "googletagmanager", "analytics", ".svg",
+)
+
+# Known video embed host/path patterns across Indonesian news portals
+VIDEO_EMBED_PATTERNS: Tuple[str, ...] = (
+	"youtube.com/embed/",
+	"youtube-nocookie.com/embed/",
+	"youtu.be/",
+	"youtube.com/watch",
+	"20.detik.com/embed",
+	"20.detik.com/detikflash",
+	"video.detik.com",
+	"cnnindonesia.com/tv/embed",
+	"cnbcindonesia.com/tv/embed",
+	"dailymotion.com/embed/",
+	"kgnow.com",
+	"kompas.tv",
+	"brid.tv",
+	"jwplayer",
+)
+
+
+def _is_valid_article_photo_url(url: str) -> bool:
+	"""Return True if `url` looks like a genuine news article photo rather than a site icon or tracker."""
+	if not url:
+		return False
+	cleaned = url.strip()
+	if cleaned.startswith("data:"):
+		return False
+	low = cleaned.lower()
+	if not (low.startswith("http://") or low.startswith("https://") or low.startswith("//")):
+		return False
+	for bad in NON_PHOTO_URL_SUBSTRINGS:
+		if bad in low:
+			return False
+	return True
+
+
+def _is_valid_video_url(url: str) -> bool:
+	"""Return True if `url` is a playable video stream or recognized video player embed URL."""
+	if not url:
+		return False
+	cleaned = url.strip()
+	low = cleaned.lower()
+	if not (low.startswith("http://") or low.startswith("https://") or low.startswith("//")):
+		return False
+	if any(ext in low for ext in (".mp4", ".m3u8", ".webm", ".ogg")):
+		return True
+	for pat in VIDEO_EMBED_PATTERNS:
+		if pat in low:
+			return True
+	return False
+
+
+def _resolve_media_url(raw_url: str, page_url: str) -> str:
+	"""Normalize a relative or protocol-relative media URL against `page_url`."""
+	if not raw_url:
+		return ""
+	cleaned = raw_url.strip()
+	if cleaned.startswith("//"):
+		return "https:" + cleaned
+	return urllib.parse.urljoin(page_url or "https://www.kompas.com", cleaned)
+
+
+def _extract_img_url_from_node(img_node: _DOMNode, page_url: str) -> str:
+	"""Extract the highest-resolution image URL from an `<img>` DOM node."""
+	for attr in ("data-src", "data-original", "data-lazy-src", "src"):
+		val = (img_node.attrs.get(attr) or "").strip()
+		if val and not val.startswith("data:"):
+			resolved = _resolve_media_url(val, page_url)
+			if _is_valid_article_photo_url(resolved):
+				return resolved
+	srcset = (img_node.attrs.get("srcset") or img_node.attrs.get("data-srcset") or "").strip()
+	if srcset:
+		first_part = srcset.split(",")[0].strip().split()[0]
+		resolved = _resolve_media_url(first_part, page_url)
+		if _is_valid_article_photo_url(resolved):
+			return resolved
+	return ""
+
+
+def extract_article_media_from_dom(
+	root: _DOMNode,
+	content_containers: List[_DOMNode],
+	html_string: str,
+	page_url: str,
+	main_caption: str = "",
+	default_title: str = "",
+) -> Tuple[List[Dict[str, str]], List[Dict[str, str]]]:
+	"""
+	Extract deduplicated photos and videos from an article DOM tree, meta tags, and JSON-LD.
+	Returns `(photos_list, videos_list)` where each item is a `MediaItem.to_dict()` dictionary.
+	"""
+	from .models import MediaItem
+
+	photos: List[Dict[str, str]] = []
+	seen_photo_urls: Set[str] = set()
+
+	videos: List[Dict[str, str]] = []
+	seen_video_urls: Set[str] = set()
+
+	def _add_photo(url: str, caption: str = "") -> None:
+		resolved = _resolve_media_url(url, page_url)
+		if not _is_valid_article_photo_url(resolved):
+			return
+		norm_key = resolved.split("?")[0].lower()
+		if norm_key in seen_photo_urls:
+			if caption:
+				for p in photos:
+					if p["url"].split("?")[0].lower() == norm_key and not p.get("caption"):
+						p["caption"] = caption
+			return
+		seen_photo_urls.add(norm_key)
+		photos.append(
+			MediaItem(
+				media_type="photo",
+				url=resolved,
+				caption=caption or main_caption or default_title,
+			).to_dict()
+		)
+
+	def _add_video(url: str, caption: str = "", thumbnail_url: str = "", provider: str = "", stream_url: str = "") -> None:
+		resolved = _resolve_media_url(url, page_url)
+		if not _is_valid_video_url(resolved):
+			return
+		# Normalize YouTube watch/short URLs to /embed/ for direct inline HTML playback
+		yt_w = re.match(r"^https?://(?:www\.|m\.)?youtube\.com/watch\?.*?\bv=([a-zA-Z0-9_\-]{6,})", resolved, re.IGNORECASE)
+		if yt_w:
+			resolved = f"https://www.youtube.com/embed/{yt_w.group(1)}"
+		yt_s = re.match(r"^https?://youtu\.be/([a-zA-Z0-9_\-]{6,})", resolved, re.IGNORECASE)
+		if yt_s:
+			resolved = f"https://www.youtube.com/embed/{yt_s.group(1)}"
+		norm_key = resolved.lower()
+		if norm_key in seen_video_urls:
+			return
+		seen_video_urls.add(norm_key)
+		resolved_stream = _resolve_media_url(stream_url, page_url) if stream_url else ""
+		if not resolved_stream and any(ext in norm_key for ext in (".mp4", ".webm", ".ogg", ".m3u8")):
+			resolved_stream = resolved
+		if not provider:
+			low = norm_key
+			if "youtube" in low or "youtu.be" in low:
+				provider = "YouTube"
+			elif "detik" in low:
+				provider = "20Detik"
+			elif "cnnindonesia" in low:
+				provider = "CNN Indonesia TV"
+			elif "cnbcindonesia" in low:
+				provider = "CNBC Indonesia TV"
+			elif "kompas" in low or "kgnow" in low or "dailymotion" in low:
+				provider = "Kompas Video"
+			else:
+				provider = "Video"
+		videos.append(
+			MediaItem(
+				media_type="video",
+				url=resolved,
+				caption=caption or default_title or "Video Berita",
+				thumbnail_url=_resolve_media_url(thumbnail_url, page_url) if thumbnail_url else "",
+				provider=provider,
+				stream_url=resolved_stream,
+			).to_dict()
+		)
+
+	# 1. Inspect <meta> tags for og:image, twitter:image, and og:video
+	og_image_url = ""
+	for node in _iter_nodes(root):
+		if node.tag == "meta":
+			m_name = (node.attrs.get("property") or node.attrs.get("name") or "").lower().strip()
+			m_content = (node.attrs.get("content") or "").strip()
+			if not m_content:
+				continue
+			if m_name in ("og:image", "twitter:image", "twitter:image:src") and not og_image_url:
+				og_image_url = m_content
+			elif m_name in ("og:video", "og:video:url", "og:video:secure_url"):
+				_add_video(m_content, caption=default_title)
+
+	if og_image_url:
+		_add_photo(og_image_url, caption=main_caption or default_title)
+
+	# 2. Inspect JSON-LD blocks for ImageObject and VideoObject
+	if html_string:
+		import json as _json
+		for raw_json in re.findall(
+			r"<script[^>]*type=[\"']application/ld\\+json[\"'][^>]*>(.*?)</script>",
+			html_string,
+			flags=re.IGNORECASE | re.DOTALL,
+		):
+			try:
+				data = _json.loads(raw_json.strip())
+			except Exception:
+				continue
+			items = data if isinstance(data, list) else [data]
+			for obj in items:
+				if not isinstance(obj, dict):
+					continue
+				graph = obj.get("@graph")
+				if isinstance(graph, list):
+					items.extend(g for g in graph if isinstance(g, dict))
+				atype = str(obj.get("@type") or "").lower()
+				if "videoobject" in atype:
+					v_url = str(obj.get("contentUrl") or obj.get("embedUrl") or obj.get("url") or "").strip()
+					v_name = html.unescape(str(obj.get("name") or obj.get("description") or default_title)).strip()
+					v_thumb = obj.get("thumbnailUrl")
+					if isinstance(v_thumb, list) and v_thumb:
+						v_thumb = v_thumb[0]
+					v_thumb_str = str(v_thumb or "").strip() if isinstance(v_thumb, str) else ""
+					if v_url:
+						_add_video(v_url, caption=v_name, thumbnail_url=v_thumb_str)
+				img_field = obj.get("image")
+				if isinstance(img_field, str):
+					_add_photo(img_field, caption=main_caption or default_title)
+				elif isinstance(img_field, dict) and img_field.get("url"):
+					_add_photo(str(img_field["url"]), caption= str(img_field.get("caption") or main_caption or default_title))
+				elif isinstance(img_field, list):
+					for it in img_field:
+						if isinstance(it, str):
+							_add_photo(it, caption=main_caption or default_title)
+						elif isinstance(it, dict) and it.get("url"):
+							_add_photo(str(it["url"]), caption=str(it.get("caption") or main_caption or default_title))
+
+	# 3. Inspect hero photo containers and article body containers for <img>, <video>, <source>, and <iframe>
+	search_scopes: List[_DOMNode] = []
+	for node in _iter_nodes(root):
+		cls_j = " ".join(node.classes).lower()
+		if node.tag == "figure" or any(
+			k in cls_j
+			for k in (
+				"photo__wrap", "read__photo", "detail__media", "pic_artikel",
+				"media_artikel", "galeri", "foto", "video",
+			)
+		):
+			search_scopes.append(node)
+	search_scopes.extend(content_containers)
+	if not search_scopes:
+		search_scopes.append(root)
+
+	for scope in search_scopes:
+		for node in _iter_nodes(scope):
+			# Check <video> and <source>
+			if node.tag in ("video", "source"):
+				v_src = (node.attrs.get("src") or node.attrs.get("data-src") or "").strip()
+				if v_src:
+					_add_video(v_src, caption=default_title)
+			# Check <iframe> for video embeds
+			elif node.tag == "iframe":
+				i_src = (node.attrs.get("src") or node.attrs.get("data-src") or "").strip()
+				i_title = (node.attrs.get("title") or default_title or "").strip()
+				if i_src and _is_valid_video_url(i_src):
+					_add_video(i_src, caption=i_title)
+			# Check <img> for article photos
+			elif node.tag == "img":
+				# Skip images inside nav/footer/related/baca-juga widgets
+				parent_ptr = node.parent
+				skip_img = False
+				fig_caption = ""
+				while parent_ptr is not None and parent_ptr != root:
+					if parent_ptr.tag in ("nav", "footer", "header", "aside"):
+						skip_img = True
+						break
+					p_cls = (" ".join(parent_ptr.classes) + " " + parent_ptr.id).lower()
+					if any(
+						bad_c in p_cls
+						for bad_c in ("baca-juga", "bacajuga", "linksisip", "related", "terpopuler", "recomend", "ads-", "iklan", "share", "comment")
+					):
+						skip_img = True
+						break
+					if parent_ptr.tag == "figure" and not fig_caption:
+						for sub in _iter_nodes(parent_ptr):
+							if sub.tag == "figcaption" or "caption" in " ".join(sub.classes).lower():
+								fig_caption = sub.get_text()
+								break
+					parent_ptr = parent_ptr.parent
+				if skip_img:
+					continue
+
+				img_url = _extract_img_url_from_node(node, page_url)
+				if not img_url:
+					continue
+				alt_txt = (node.attrs.get("alt") or node.attrs.get("title") or "").strip()
+				cap = fig_caption or alt_txt or main_caption or default_title
+				cap = re.sub(r"^Lihat\s+Foto\s*", "", cap, flags=re.IGNORECASE).strip()
+				_add_photo(img_url, caption=cap)
+
+	# 4. Also check raw HTML for embedded video streams (.mp4 / .m3u8) or YouTube/20Detik iframe URLs
+	if html_string:
+		for m_yt in re.finditer(
+			r'https?://(?:www\.)?(?:youtube\.com/embed/[a-zA-Z0-9_\-]+|20\.detik\.com/embed/[a-zA-Z0-9_\-/]+|cnnindonesia\.com/tv/embed/[a-zA-Z0-9_\-/]+|cnbcindonesia\.com/tv/embed/[a-zA-Z0-9_\-/]+|dailymotion\.com/embed/video/[a-zA-Z0-9_\-]+)',
+			html_string,
+			flags=re.IGNORECASE,
+		):
+			_add_video(m_yt.group(0), caption=default_title)
+
+		for m_mp4 in re.finditer(
+			r"https?://[^\"\x27\\s<>]+\\.(?:mp4|m3u8)(?:\\?[^\"\x27\\s<>]*)?",
+			html_string,
+			flags=re.IGNORECASE,
+		):
+			candidate_stream = m_mp4.group(0)
+			if not any(bad in candidate_stream.lower() for bad in ("ads", "banner", "preroll", " bumper")):
+				_add_video(candidate_stream, caption=default_title)
+
+	# 5. If the article URL itself is on 20.detik.com or a video channel and no video was added yet, include the page URL
+	if not videos and page_url:
+		low_page = page_url.lower()
+		if "20.detik.com" in low_page or "/video/" in low_page or "/detikflash/" in low_page:
+			videos.append(
+				MediaItem(
+					media_type="video",
+					url=page_url,
+					caption=default_title or "Video Berita",
+					thumbnail_url=photos[0]["url"] if photos else "",
+					provider="Video Portal",
+				).to_dict()
+			)
+
+	return photos, videos
+
+
+
+def _extract_inline_media_blocks_from_node(node: _DOMNode, blocks: List[Dict[str, Any]], page_url: str) -> bool:
+	"""
+	Inspect `node` for inline `<video>`, video `<iframe>`, or `<figure>`/`<img>` elements
+	and append `ContentBlock(block_type="video"|"image")` in reading order.
+	Returns True if `node` was handled as a media element or figure.
+	"""
+	t = node.tag
+	if t == "video":
+		v_src = (node.attrs.get("src") or node.attrs.get("data-src") or "").strip()
+		if not v_src:
+			for sub in _iter_nodes(node):
+				if sub.tag == "source":
+					v_src = (sub.attrs.get("src") or sub.attrs.get("data-src") or "").strip()
+					if v_src:
+						break
+		resolved = _resolve_media_url(v_src, page_url)
+		if _is_valid_video_url(resolved):
+			stream = resolved if any(ext in resolved.lower() for ext in (".mp4", ".webm", ".ogg", ".m3u8")) else ""
+			blocks.append(ContentBlock(block_type="video", url=resolved, stream_url=stream, text=node.attrs.get("title", "")).to_dict())
+			return True
+		return False
+
+	if t == "iframe":
+		i_src = (node.attrs.get("src") or node.attrs.get("data-src") or "").strip()
+		resolved = _resolve_media_url(i_src, page_url)
+		if _is_valid_video_url(resolved):
+			m_yt = re.search(r"(?:youtube\.com/watch\?v=|youtu\.be/)([A-Za-z0-9_\-]+)", resolved, re.IGNORECASE)
+			if m_yt:
+				resolved = f"https://www.youtube.com/embed/{m_yt.group(1)}"
+			blocks.append(ContentBlock(block_type="video", url=resolved, text=(node.attrs.get("title") or "").strip()).to_dict())
+			return True
+		return True
+
+	if t == "img":
+		img_url = _extract_img_url_from_node(node, page_url)
+		if img_url:
+			alt_txt = (node.attrs.get("alt") or node.attrs.get("title") or "").strip()
+			alt_txt = re.sub(r"^Lihat\s+Foto\s*", "", alt_txt, flags=re.IGNORECASE).strip()
+			blocks.append(ContentBlock(block_type="image", url=img_url, text=alt_txt).to_dict())
+			return True
+		return False
+
+	if t == "figure" or "photo__wrap" in node.classes or "read__photo" in node.classes or "detail__media" in node.classes:
+		cap_text = ""
+		for sub in _iter_nodes(node):
+			if sub.tag == "figcaption" or any(c in sub.classes for c in ("photo__caption", "read__photo__caption", "detail__media-caption")):
+				cap_text = sub.get_text(exclude_baca_juga=True)
+				break
+		if not cap_text:
+			cap_text = node.get_text(exclude_baca_juga=True)
+		cap_text = re.sub(r"^Lihat\s+Foto\s*", "", cap_text, flags=re.IGNORECASE).strip()
+
+		for sub in _iter_nodes(node):
+			if sub.tag in ("video", "source"):
+				v_src = (sub.attrs.get("src") or sub.attrs.get("data-src") or "").strip()
+				resolved = _resolve_media_url(v_src, page_url)
+				if _is_valid_video_url(resolved):
+					stream = resolved if any(ext in resolved.lower() for ext in (".mp4", ".webm", ".ogg", ".m3u8")) else ""
+					blocks.append(ContentBlock(block_type="video", url=resolved, stream_url=stream, text=cap_text).to_dict())
+					return True
+			elif sub.tag == "iframe":
+				i_src = (sub.attrs.get("src") or sub.attrs.get("data-src") or "").strip()
+				resolved = _resolve_media_url(i_src, page_url)
+				if _is_valid_video_url(resolved):
+					blocks.append(ContentBlock(block_type="video", url=resolved, text=cap_text or (sub.attrs.get("title") or "").strip()).to_dict())
+					return True
+			elif sub.tag == "img":
+				img_url = _extract_img_url_from_node(sub, page_url)
+				if img_url:
+					alt_txt = (sub.attrs.get("alt") or sub.attrs.get("title") or "").strip()
+					blocks.append(ContentBlock(block_type="image", url=img_url, text=cap_text or alt_txt).to_dict())
+					return True
+
+		if cap_text and len(cap_text) > 15 and not _is_noise_text(cap_text):
+			blocks.append(ContentBlock(block_type="caption", text=cap_text).to_dict())
+		return True
+
+	return False
 
 
 def parse_kompas_article_html(html_string: str, url: str, default_category: str = "") -> Dict[str, Any]:
@@ -781,12 +1193,12 @@ def parse_kompas_article_html(html_string: str, url: str, default_category: str 
 
 	if content_containers:
 		for container in content_containers:
-			_extract_clean_blocks_from_container(container, blocks)
+			_extract_clean_blocks_from_container(container, blocks, page_url=url)
 	else:
 		# Fallback if class names change: search for an <article> element while keeping strict noise filtering
 		for node in _iter_nodes(root):
 			if node.tag == "article":
-				_extract_clean_blocks_from_container(node, blocks)
+				_extract_clean_blocks_from_container(node, blocks, page_url=url)
 				if blocks:
 					break
 
@@ -828,6 +1240,17 @@ def parse_kompas_article_html(html_string: str, url: str, default_category: str 
 		if last_txt.lower().startswith("sumber:") or last_txt.lower().startswith("kredit:"):
 			source_credit = last_txt
 
+	photos, videos = extract_article_media_from_dom(
+		root=root,
+		content_containers=content_containers,
+		html_string=html_string,
+		page_url=url,
+		main_caption=main_caption,
+		default_title=title,
+	)
+	if (photos or videos) and status == ArticleStatus.CONTENT_FAILED:
+		status = ArticleStatus.CONTENT_LOADED
+
 	return {
 		"title": title,
 		"category": category or default_category or "Kompas.com",
@@ -839,5 +1262,7 @@ def parse_kompas_article_html(html_string: str, url: str, default_category: str 
 		"summary": summary_deck,
 		"source_credit": source_credit,
 		"content": blocks,
+		"photos": photos,
+		"videos": videos,
 		"content_status": status,
 	}

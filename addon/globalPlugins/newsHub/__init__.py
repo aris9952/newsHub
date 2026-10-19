@@ -56,11 +56,10 @@ from .dialogs import (
 	register_settings_change_listener,
 	unregister_settings_change_listener,
 )
-from .i18n import tr
 
 
 class GlobalPlugin(_BaseGlobalPlugin):
-	"""GlobalPlugin for NewsHub for NVDA (Multi-site News Reader with Kompas.com support)."""
+	"""GlobalPlugin for NewsHub for NVDA (Multi-site News Reader with Kompas.com, Detik.com, CNN Indonesia, CNBC Indonesia, and Tempo.co support)."""
 	scriptCategory = "NewsHub for NVDA"
 
 	def __init__(self):
@@ -105,8 +104,8 @@ class GlobalPlugin(_BaseGlobalPlugin):
 			tools_menu = gui.mainFrame.sysTrayIcon.toolsMenu
 			self._tools_menu_item = tools_menu.Append(
 				wx.ID_ANY,
-				tr("tools_menu_label"),
-				tr("tools_menu_help"),
+				_('&NewsHub for NVDA (News Reader)...'),
+				_('Open the NewsHub for NVDA multi-site news reader dashboard'),
 			)
 			gui.mainFrame.sysTrayIcon.Bind(
 				wx.EVT_MENU,
@@ -120,8 +119,8 @@ class GlobalPlugin(_BaseGlobalPlugin):
 			prefs_menu = gui.mainFrame.sysTrayIcon.preferencesMenu
 			self._prefs_menu_item = prefs_menu.Append(
 				wx.ID_ANY,
-				tr("prefs_menu_label"),
-				tr("prefs_menu_help"),
+				_('&NewsHub for NVDA Settings...'),
+				_('Configure language and display preferences for NewsHub for NVDA'),
 			)
 			gui.mainFrame.sysTrayIcon.Bind(
 				wx.EVT_MENU,
@@ -135,11 +134,11 @@ class GlobalPlugin(_BaseGlobalPlugin):
 		"""Update menu item labels dynamically when the user changes the interface language."""
 		try:
 			if self._tools_menu_item is not None:
-				self._tools_menu_item.SetItemLabel(tr("tools_menu_label"))
-				self._tools_menu_item.SetHelp(tr("tools_menu_help"))
+				self._tools_menu_item.SetItemLabel(_('&NewsHub for NVDA (News Reader)...'))
+				self._tools_menu_item.SetHelp(_('Open the NewsHub for NVDA multi-site news reader dashboard'))
 			if self._prefs_menu_item is not None:
-				self._prefs_menu_item.SetItemLabel(tr("prefs_menu_label"))
-				self._prefs_menu_item.SetHelp(tr("prefs_menu_help"))
+				self._prefs_menu_item.SetItemLabel(_('&NewsHub for NVDA Settings...'))
+				self._prefs_menu_item.SetHelp(_('Configure language and display preferences for NewsHub for NVDA'))
 		except Exception:
 			pass
 
@@ -167,7 +166,7 @@ class GlobalPlugin(_BaseGlobalPlugin):
 				gui.mainFrame.prePopup()
 				dlg = AccessibilitySettingsDialog(gui.mainFrame)
 				if dlg.ShowModal() == wx.ID_OK:
-					announce_nvda(tr("settings_saved_announcement"))
+					announce_nvda(_('NewsHub for NVDA settings have been saved and applied.'))
 				dlg.Destroy()
 				gui.mainFrame.postPopup()
 			except Exception:
@@ -187,7 +186,7 @@ class GlobalPlugin(_BaseGlobalPlugin):
 						self._dashboard_dlg.Iconize(False)
 					self._dashboard_dlg.Raise()
 					self._dashboard_dlg.SetFocus()
-					announce_nvda(tr("dashboard_active_announcement"))
+					announce_nvda(_('NewsHub for NVDA dashboard is active.'))
 					return
 
 				gui.mainFrame.prePopup()

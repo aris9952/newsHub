@@ -16,7 +16,6 @@ CONFIG_SECTION = "newsHub"
 
 # NVDA configobj schema specification for the "newsHub" namespace
 NEWSHUB_CONFIG_SPEC: Dict[str, str] = {
-	"language": 'string(default="id")',
 	"last_site_id": 'string(default="kompas")',
 	"last_rubric_id": 'string(default="news")',
 	"color_theme": 'string(default="light")',
@@ -30,7 +29,6 @@ NEWSHUB_CONFIG_SPEC: Dict[str, str] = {
 }
 
 DEFAULT_PREFERENCES: Dict[str, Any] = {
-	"language": "id",                # 'id' (Bahasa Indonesia) | 'en' (English)
 	"last_site_id": "kompas",
 	"last_rubric_id": "news",
 	"color_theme": "light",          # 'light' | 'dark' | 'high_contrast'
@@ -43,7 +41,6 @@ DEFAULT_PREFERENCES: Dict[str, Any] = {
 	"cache_ttl_sec": 180,
 }
 
-VALID_LANGUAGES = ("id", "en")
 VALID_THEMES = ("light", "dark", "high_contrast")
 VALID_FONT_FAMILIES = ("sans_serif", "serif")
 VALID_PARAGRAPH_SPACINGS = ("normal", "wide")
@@ -165,10 +162,6 @@ class ConfigManager:
 	def get(self, key: str) -> Any:
 		"""Retrieve a validated configuration value with safe defaults."""
 		raw = self._get_raw(key)
-
-		if key == "language":
-			lang = str(raw or "id").strip().lower()
-			return lang if lang in VALID_LANGUAGES else "id"
 
 		if key == "last_site_id":
 			site_id = str(raw or "kompas").strip().lower()
